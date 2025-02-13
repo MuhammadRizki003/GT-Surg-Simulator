@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: "CenturyGothicBold", sans-serif;
+    background-color: #000000;
+    
+    /* background-image: url("./../../public/images.jpeg");
+    background-position: center;
+    /* Center the image */
+    /* background-repeat: no-repeat; */
+    /* Do not repeat the image */
+    /* background-size: cover; */ 
+  }
+}
