@@ -1,15 +1,83 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: CenturyGothicBold;
+  src: url("./../../public/CenturyGothic-Bold.ttf");
+}
+
 @layer base {
   body {
     font-family: "CenturyGothicBold", sans-serif;
     background-color: #000000;
-    
-    /* background-image: url("./../../public/images.jpeg");
-    background-position: center;
+
+    background-image: url("./../../public/bedrock.png");
+    /* background-position: center; */
     /* Center the image */
     /* background-repeat: no-repeat; */
     /* Do not repeat the image */
-    /* background-size: cover; */ 
+    /* background-size: cover; */
+  }
+}
+
+@layer components {
+  .growtopia-theme-box {
+    background: rgba(68, 129, 166, 0.7);
+    border: 5px solid rgb(190, 232, 241);
+    border-radius: 7px;
+    /* overflow: hidden auto; */
+    box-shadow: rgb(0, 0, 0) 3px 3px, rgb(0, 0, 0) 3px 3px inset;
+    transition: max-height 0.5s ease-out;
+  }
+
+  .growtopia-theme-box::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  .growtopia-theme-box::-webkit-scrollbar-track {
+    background: rgba(51, 51, 51, 0);
+  }
+
+  .growtopia-theme-box::-webkit-scrollbar-thumb {
+    background: rgb(98, 179, 197);
+    border-radius: 10px;
+  }
+
+  .growtopia-theme-box::-webkit-scrollbar-thumb:hover {
+    background: rgb(190, 232, 241);
+  }
+
+
+  .growtopia-button {
+    border-radius: 5px;
+    box-shadow: rgb(0, 0, 0) 2px 2px;
+    cursor: pointer;
+    text-decoration: none;
+    text-shadow: rgba(0, 0, 0, 0.7) 2px 2px;
+    background: rgb(137, 195, 214);
+  }
+  .notif{
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    max-height: 0;
+    transition: max-height .5s ease-out;
+  }
+  .notif.show{
+    max-height: 100%;
+  }
+
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(-15deg);
+  }
+
+  50% {
+    transform: rotate(15deg);
+  }
+
+  100% {
+    transform: rotate(-15deg);
   }
 }

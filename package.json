@@ -20,6 +20,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    "@tailwindcss/cli": "^4.0.6",
     "acorn": "^8.14.0",
     "acorn-jsx": "^5.3.2",
     "ajv": "^6.12.6",
@@ -58,6 +59,7 @@
     "is-extglob": "^2.1.1",
     "is-glob": "^4.0.3",
     "isexe": "^2.0.0",
+    "jquery": "^3.7.1",
     "js-yaml": "^4.1.0",
     "json-buffer": "^3.0.1",
     "json-schema-traverse": "^0.4.1",
@@ -83,6 +85,7 @@
     "shebang-regex": "^3.0.0",
     "strip-json-comments": "^3.1.1",
     "supports-color": "^7.2.0",
+    "tailwindcss": "^4.0.6",
     "type-check": "^0.4.0",
     "uri-js": "^4.4.1",
     "which": "^2.0.2",
@@ -90,9 +93,9 @@
     "yocto-queue": "^0.1.0"
   },
   "scripts": {
-    "tailwind" : "tailwindcss -i ./src/scripts/styles/input.css -o ./src/scripts/styles/output.css --watch",
-      "start-dev": "webpack serve --config webpack.dev.js",
-      "build": "webpack --config webpack.prod.js"
+    "tailwind": "tailwindcss -i ./src/scripts/styles/input.css -o ./src/scripts/styles/output.css --watch",
+    "start-dev": "webpack serve --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
   },
   "author": "",
   "license": "ISC",

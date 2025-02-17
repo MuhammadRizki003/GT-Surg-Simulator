@@ -12,31 +12,92 @@
 
 <body class="flex flex-col w-full h-screen items-center">
   <header
-    class="flex min-h-20 h-20 max-h-20 fixed top-0 bg-[#313338] z-10 flex-row w-full justify-center shadow shadow-[#383A40]">
-    <div class="flex flex-row w-full max-w-[1400px] justify-between">
+    class="flex min-h-20 h-20 max-h-20 fixed top-0 bg-[#1E1F22] z-[999] flex-row w-full justify-center shadow shadow-[#383A40]">
+    <div class="flex flex-row w-full max-w-[1400px] justify-between px-5">
       <div class="items-center flex flex-row gap-2.5">
         <img src="./goldcadu.png" alt="Gold Cadusesu Logo">
         <h1 class="text-xl capitalize font-semibold text-teal-600">GTSURG SIMULATOR</h1>
       </div>
       <nav id="navigationDrawer" class="flex flex-row">
-        <ul class="flex flex-row items-center px-3">
-          <li class="px-3 text-stone-700 font-semibold"><a href="#/now-playing">Others</a></li>
-          <li class="px-3 text-stone-700 font-semibold"><a href="#/upcoming">Upcoming</a></li>
+        <ul class="flex flex-row items-center gap-6">
+          <li class=" text-stone-500 font-semibold"><a href="#/now-playing">Tips</a></li>
+          <li class=" text-stone-500 font-semibold"><a href="#/upcoming">Upcoming</a></li>
         </ul>
       </nav>
     </div>
 
   </header>
   <main id="mainContent" class="flex grow flex-col w-full items-center mt-20">
-    <section
-      class="w-full h-80 flex justify-center items-end pb-5 bg-[url(./../../public/pxfuel.jpg)] bg-blend-overlay bg-bottom">
-      <div class="flex flex-col items-center pt-4">
-        <h1 class="text-4xl font-extrabold text-lime-600 drop-shadow-2xl">GROWTOPIA SURGERY GUIDE & SIMULATOR</h1>
-        <span class="text-lime-700 font-semibold text-md">Try unlimited surgeries without spending any surgical
-          tools!</span>
+    <section id="surgsetting" class="hidden flex-col  w-screen h-screen bg-black/50 fixed top-0 items-center px-4 z-[999]">
+      <div class="flex flex-row mt-40 justify-between pt-6 w-fit notif">
+        <div class="flex flex-col justify-center items-center w-full growtopia-theme-box p-4">
+          <p class="flex items-center text-xs text-slate-300">
+            *Form will auto-submit, close when the setup is complete.
+          </p>
+          <div class="flex flex-row justify-between items-center w-full">
+            <div class="flex flex-col justify-center ">
+              <span class=" font-semibold text-white pb-1">Select Case: </span>
+              <form>
+                <label for="search" class="mb-2 text-sm font-medium text-white sr-only">Search</label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                    <svg class="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                      viewBox="0 0 20 20">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                    </svg>
+                  </div>
+                  <input type="search" id="search"
+                    class="block w-full p-2 ps-10 text-sm growtopia-theme-box focus:outline-0 placeholder:text-slate-300 text-white"
+                    placeholder="Search" required />
+
+                </div>
+              </form>
+              <p class="flex items-center mt-2 text-xs text-slate-300">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-1.5">
+                  <path fill-rule="evenodd"
+                    d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                    clip-rule="evenodd" />
+                </svg>
+                Default random
+              </p>
+            </div>
+            <div class="flex flex-col justify-center">
+              <span class=" font-semibold text-white pb-1">Surgery skill: </span>
+              <div class="relative">
+                <input id="skill" max="100" min="0" type="number" value="100"
+                  class="block w-full p-2 text-sm growtopia-theme-box focus:outline-0 placeholder:text-slate-300 text-white"
+                  placeholder="1-100" />
+                <p class="flex items-center mt-2 text-xs text-slate-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                    class="w-5 h-5 mr-1.5">
+                    <path fill-rule="evenodd"
+                      d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  Default 100
+                </p>
+              </div>
+            </div>
+          </div>
+          <button id="closesetting"
+            class="growtopia-button px-3 py-1 self-end text-xl text-white font-semibold mt-4">Close</button>
+        </div>
+
       </div>
+      <!-- Select Cases -->
+
     </section>
-    <section class="w-full max-w-[1400px]">
+    <section class="w-full h-full relative justify-center items-center pb-5 flex flex-col">
+      <div class="bg-black absolute top-0 w-full h-[1000px]">
+        <!-- <img class="opacity-60 h-[600px]" src="./bgweather.png" alt="BG">
+          -->
+        <div class="bg-[url(./../../public/bgweather.png)] h-full w-full flex bg-bottom opacity-50"></div>
+      </div>
+      <!-- <section
+        class="w-full grow justify-center items-end pb-5 bg-[url(./../../public/bedrock.png)] bg-blend-overlay bg-bottom">
+        <div class="h-full"></div>
+      </section> -->
       <script>
         // Stats variables
         var sounded = false;
@@ -198,114 +259,213 @@
           var drawbox = document.getElementById("surstat");
           drawbox.innerHTML = '';
           if (!sounded && !flu || !labworked && flu)
-            drawbox.innerHTML += ('The patient has not been diagnosed.');
+            drawbox.innerHTML += colorize('The patient has not been diagnosed.', 'red');
           else if (!fixable || flu || incneeded == 0)
             drawbox.innerHTML += (pretext)
           else if (!fixed)
             drawbox.innerHTML += (fixtext)
           else
             drawbox.innerHTML += (postext);
+          // Separator
+          drawbox.innerHTML += '<br>';
+          // container
+          const surginfo = document.createElement('div');
+          const surginfoclasses = ['grid', 'grid-cols-2', 'w-fit', 'gap-x-4', 'gap-y-1']
+          surginfo.classList.add(...surginfoclasses);
           // Pulse
-          drawbox.innerHTML += ('<br />Pulse: ');
-          if (pulse < 11)
-            drawbox.innerHTML += (colorize('Extremely Weak', 'red'))
-          else if (pulse < 21)
-            drawbox.innerHTML += (colorize('Weak', 'orange'))
-          else if (pulse < 31)
-            drawbox.innerHTML += (colorize('Steady', 'blue'))
-          else
-            drawbox.innerHTML += (colorize('Strong', 'green'));
+          if (pulse < 11) {
+            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
+        <span class="text-white font-semibold">Pulse : </span>
+        <span class="text-[#F44849] font-semibold">Extremely Weak</span>
+    </div>`;
+          } else if (pulse < 21) {
+            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
+        <span class="text-white font-semibold">Pulse : </span>
+        <span class="text-[#F3C678] font-semibold">Weak</span>
+    </div>`;
+          } else if (pulse < 31) {
+            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
+        <span class="text-white font-semibold">Pulse : </span>
+        <span class="text-[#7EBDE1] font-semibold">Steady</span>
+    </div>`;
+          } else {
+            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
+        <span class="text-white font-semibold">Pulse : </span>
+        <span class="text-[#2ED413] font-semibold">Strong</span>
+    </div>`;
+          }
+
           // Status
-          drawbox.innerHTML += ('&#160;&#160;&#160;&#160;&#160;Status: ');
           if (heart > 0)
-            drawbox.innerHTML += (colorize('Heart stopped!', 'red'))
+            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
+        <span class="text-white font-semibold">Status : </span>
+        <span class="text-[#F44849] font-semibold">Heart stopped!</span>
+    </div>`;
           else if (sleep == 0)
-            drawbox.innerHTML += (colorize('Awake', fixed ? 'blue' : 'red'))
+            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
+    <span class="text-white font-semibold">Status : </span>
+    <span class="${fixed ? 'text-[#7EBDE1]' : 'text-[#F44849]'} font-semibold">Awake</span>
+</div>`;
           else if (sleep < 3)
-            drawbox.innerHTML += (colorize('Coming to', 'orange'))
+            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
+        <span class="text-white font-semibold">Status : </span>
+        <span class="text-[#F3C678] font-semibold">Coming to</span>
+    </div>`
           else
-            drawbox.innerHTML += (colorize('Unconcsious', 'green'));
+            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
+        <span class="text-white font-semibold">Status : </span>
+        <span class="text-[#2ED413] font-semibold">Unconcsious</span>
+    </div>`;
           // Temp
-          drawbox.innerHTML += ('<br />Temp: ');
           if (temp < 100)
-            drawbox.innerHTML += (colorize(temp, 'green'))
+            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
+        <span class="text-white font-semibold">Temp : </span>
+        <span class="text-[#2ED413] font-semibold">${temp}</span>
+    </div>`;
           else if (temp < 104)
-            drawbox.innerHTML += (colorize(temp, 'blue'))
+            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
+        <span class="text-white font-semibold">Temp : </span>
+        <span class="text-[#7EBDE1] font-semibold">${temp}</span>
+    </div>`;
           else if (temp < 106)
-            drawbox.innerHTML += (colorize(temp, 'orange'))
+            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
+        <span class="text-white font-semibold">Temp : </span>
+        <span class="text-[#F3C678] font-semibold">${temp}</span>
+    </div>`;
           else
-            drawbox.innerHTML += (colorize(temp, 'red'));
+            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
+        <span class="text-white font-semibold">Temp : </span>
+        <span class="text-[#F44849] font-semibold">${temp}</span>
+    </div>`;
           // Operation site
-          drawbox.innerHTML += ('&#160;&#160;&#160;&#160;&#160;Operation site: ');
           if (site < -3)
-            drawbox.innerHTML += (colorize('Unsanitary', 'red'))
+            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
+        <span class="text-white font-semibold">Operation site : </span>
+        <span class="text-[#F44849] font-semibold">Unsanitary</span>
+    </div>`;
           else if (site < -1)
-            drawbox.innerHTML += (colorize('Unclean', 'orange'))
+            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
+        <span class="text-white font-semibold">Operation site : </span>
+        <span class="text-[#F3C678] font-semibold">Unclean</span>
+    </div>`;
           else if (site < 1)
-            drawbox.innerHTML += (colorize('Not sanitized', 'blue'))
-          else drawbox.innerHTML += (colorize('Clean', 'green'));
+            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
+        <span class="text-white font-semibold">Operation site : </span>
+        <span class="text-[#7EBDE1] font-semibold">Not sanitized</span>
+    </div>`;
+          else surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
+        <span class="text-white font-semibold">Operation site : </span>
+        <span class="text-[#2ED413] font-semibold">Clean</span>
+    </div>`;
           // Dirt
           if (dirt == 10)
-            drawbox.innerHTML += (colorize('<br />You can\'t see what you are doing!', 'red'))
+            surginfo.innerHTML += `<div class="col-span-2">
+                <span class="text-[#F44849] font-semibold">You can\'t see what you are doing!</span>
+              </div>`;
           else if (dirt > 4)
-            drawbox.innerHTML += (colorize('<br />It is becoming hard to see your work.', 'orange'));
+            surginfo.innerHTML += `<div class="col-span-2">
+                <span class="text-[#F3C678] font-semibold">It is becoming hard to see your work.</span>
+              </div>`;
           // Incisions
-          drawbox.innerHTML += ('<br />Incisions: ');
           if (incisions == 0)
-            drawbox.innerHTML += (colorize(incisions, 'green'))
+            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
+        <span class="text-white font-semibold">Incisions : </span>
+        <span class="text-[#2ED413] font-semibold">${incisions}</span>
+    </div>`;
           else
-            drawbox.innerHTML += (colorize(incisions, 'blue'));
+            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
+        <span class="text-white font-semibold">Incisions : </span>
+        <span class="text-[#7EBDE1] font-semibold">${incisions}</span>
+    </div>`
           // Bones
           if (broken + shattered > 0 && sounded) {
-            drawbox.innerHTML += ('&#160;&#160;&#160;&#160;&#160;Bones: ');
+            const bonescontainer = document.createElement('div');
+            const bonescontainerclasses = ['flex', 'flex-row', 'gap-0.5'];
+            bonescontainer.classList.add(...bonescontainerclasses);
+            bonescontainer.innerHTML += `
+                <span class="text-white font-semibold">Bones : </span>`;
+            let brokenText = "";
+            let shatteredText = "";
+
+            // Proses broken
             if (broken > 0) {
-              if (broken > 2)
-                drawbox.innerHTML += (colorize(broken + ' broken', 'red'))
-              else
-                drawbox.innerHTML += (colorize(broken + ' broken', 'orange'));
+              if (broken > 2) {
+                brokenText = `<span class="text-[#F44849] font-semibold">${broken} broken</span>`;
+              } else {
+                brokenText = `<span class="text-[#F3C678] font-semibold">${broken} broken</span>`;
+              }
             }
-            if (broken > 0 && shattered > 0)
-              drawbox.innerHTML += (', ');
+
+            // Proses shattered
             if (shattered > 0) {
-              if (shattered > 2)
-                drawbox.innerHTML += (colorize(shattered + ' shattered', 'red'))
-              else
-                drawbox.innerHTML += (colorize(shattered + ' shattered', 'orange'));
+              if (shattered > 2) {
+                shatteredText = `<span class="text-[#F44849] font-semibold">${shattered} shattered</span>`;
+              } else {
+                shatteredText = `<span class="text-[#F3C678] font-semibold">${shattered} shattered</span>`;
+              }
             }
+
+            // Gabungkan hasilnya
+            if (brokenText || shatteredText) {
+              bonescontainer.innerHTML += `<span class="text-white font-semibold">${brokenText}${brokenText && shatteredText ? ', ' : ''}${shatteredText}</span></div>`;
+              surginfo.append(bonescontainer);
+            }
+
           }
           // Bleeding
           if (bleeding > 0) {
-            drawbox.innerHTML += ('<br />Patient is ');
             if (bleeding == 1)
-              drawbox.innerHTML += ('losing blood ' + colorize('slowly.', 'blue'))
+              surginfo.innerHTML += `<div class="col-span-2">
+                <span class="text-white font-semibold">Patient is losing blood <span class="text-[#7EBDE1] font-semibold">slowly</span></span>
+              </div>`;
             else if (bleeding == 4)
-              drawbox.innerHTML += ('losing blood ' + colorize('fast!', 'red'))
+              surginfo.innerHTML += `<div class="col-span-2">
+                <span class="text-white font-semibold">Patient is losing blood <span class="text-[#F44849] font-semibold">fast!</span></span>
+              </div>`;
             else {
-              drawbox.innerHTML += (colorize('losing blood!', 'orange'));
+              surginfo.innerHTML += `<div class="col-span-2">
+                <span class="text-white font-semibold">Patient is <span class="text-[#F3C678] font-semibold">losing blood!</span></span>
+              </div>`;
             }
           }
           // Fever
           if (fever > 0 && temp > 100) {
-            drawbox.innerHTML += ('<br />Patient\'s fever is ');
             if (fever < 0.5)
-              drawbox.innerHTML += (colorize('slowly rising.', 'blue'))
+              surginfo.innerHTML += `<div class="col-span-2">
+                <span class="text-white font-semibold">Patient\'s fever is <span class="text-[#7EBDE1] font-semibold">slowly rising</span></span>
+              </div>`;
             else if (fever > 2)
-              drawbox.innerHTML += (colorize('climbing fast!', 'red'))
+              surginfo.innerHTML += `<div class="col-span-2">
+                <span class="text-white font-semibold">Patient\'s fever is <span class="text-[#F44849] font-semibold">climbing fast!</span></span>
+              </div>`;
             else {
-              drawbox.innerHTML += (colorize('climbing!', 'orange'));
+              surginfo.innerHTML += `<div class="col-span-2">
+                <span class="text-white font-semibold">Patient\'s fever is <span class="text-[#F3C678] font-semibold">climbing!</span></span>
+              </div>`;
             }
           }
           // Special: heart stop and cut awake
           if (heart == 1)
-            drawbox.innerHTML += ('<br />' + colorize('The patient\'s heart has stopped!', 'red'))
+            surginfo.innerHTML += `<div class="col-span-2">
+                <span class="text-[#F44849] font-semibold">The patient\'s heart has stopped!</span>
+              </div>`;
           else if (incisions > 0 && sleep == 0)
-            drawbox.innerHTML += ('<br />' + colorize('The patient screams and flails!', 'red'));
+            surginfo.innerHTML += `<div class="col-span-2">
+                <span class="text-[#F44849] font-semibold">The patient screams and flails!</span>
+              </div>`;
 
+          // container end
+          drawbox.appendChild(surginfo);
           // Tool text
           if (s)
-            drawbox.innerHTML += ('<br /><br />' + colorize(tooltext, 'blue'));
+            drawbox.innerHTML += `<div class="col-span-2 mt-10">
+                <span class="text-[#7EBDE1] font-semibold">${tooltext}</span>
+              </div>`;
           else
-            drawbox.innerHTML += ('<br /><br />' + colorize('[Skill Fail (' + Math.round(30 - document.getElementById("skill").value / 4) + '%)] ', 'red') + colorize(tooltext, 'orange'));
+            drawbox.innerHTML += `<div class="col-span-2 mt-10">
+                <span class="text-[#F44849] font-semibold">[Skill Fail (${Math.round(30 - document.getElementById("skill").value / 4)})%)] </span> 
+                <span class="text-[#F3C678] font-semibold">${tooltext}</span> 
+              </div>`;
 
           // Availability
           if (toolavailable('scalpel'))
@@ -1083,247 +1243,324 @@
         }
 
       </script>
-      <div class="bg-[#305B75]/70 rounded-xl border-4 border-[#bee8f1] shadow-md p-10">
-        <span class="text-[#f4e2b8] font-[Century Gothic] text-lg font-bold">
-          <div id="">
-            The patient has not been diagnosed.
-            <br>
-            <div class="flex flex-row gap-2">
-              <span class="flex min-w-[150px]">Pulse : <span class=""> Strong</span></span>
-              <span class="w-[120px]">Pulse :<span class=""> Strong</span></span>
+
+      <!-- container -->
+      <div class="absolute z-10 w-full top-12">
+        <div class="flex flex-col gap-5">
+          <div class="flex w-full justify-center px-4">
+            <div class="growtopia-theme-box w-full max-w-[1400px] p-5 flex flex-col items-center">
+              <h1 class="text-4xl font-extrabold text-center text-white drop-shadow-2xl">Growtopia Surgery Guide &
+                Simulator</h1>
+              <span class="text-slate-100 text-center font-semibold text-md">Try unlimited surgeries without spending
+                any surgical
+                tools!</span>
             </div>
-            <div class="w-20">Pulse: Strong</div> <span class="w-20">Status: Awake</span> 
-            Pulse: <span class="text-[#46f013]">Strong</span>
-            Status: <span class="text-[#f44849]">Awake</span><br>
-            Temp: <span class="text-[#8cbde1]">100.4</span>
-            Operation site: <span class="text-[#8cbde1]">Not sanitized</span><br>
-            Incisions: <span class="text-[#46f013]">0</span><br><br>
-            <span class="text-[#f44849]">[Skill Fail (30%)]</span>
-            <span class="text-[#f3c670]">You spilled all of it! Kind of gross.</span>
           </div>
-        </span>
-
-        <div class="flex flex-wrap gap-2 mt-4">
-          <img class="w-16 h-14 cursor-pointer" id="sponge" onclick="usetool('sponge');" title="Surgical Sponge." />
-          <img class="w-16 h-14 cursor-pointer" id="scalpel" onclick="usetool('scalpel');" title="Surgical Scalpel." />
-          <img class="w-16 h-14 cursor-pointer" id="stitches" onclick="usetool('stitches');"
-            title="Surgical Stitches." />
-          <img class="w-16 h-14 cursor-pointer" id="antibiotics" onclick="usetool('antibiotics');"
-            title="Surgical Antibiotics." />
-          <img class="w-16 h-14 cursor-pointer" id="antiseptic" onclick="usetool('antiseptic');"
-            title="Surgical Antiseptic." />
-          <img class="w-16 h-14 cursor-pointer" id="fixit" onclick="usetool('fixit');" title="Surgical Glove." />
-          <img class="w-16 h-14 cursor-pointer" id="ultrasound" onclick="usetool('ultrasound');"
-            title="Surgical Ultrasound." />
-        </div>
-
-        <div class="flex flex-wrap gap-2 mt-4">
-          <img class="w-16 h-14 cursor-pointer" id="labkit" onclick="usetool('labkit');" title="Surgical Lab Kit." />
-          <img class="w-16 h-14 cursor-pointer" id="anesthetic" onclick="usetool('anesthetic');"
-            title="Surgical Anesthetic." />
-          <img class="w-16 h-14 cursor-pointer" id="defibrillator" onclick="usetool('defibrillator');"
-            title="Surgical Defibrillator." />
-          <img class="w-16 h-14 cursor-pointer" id="splint" onclick="usetool('splint');" title="Surgical Splint." />
-          <img class="w-16 h-14 cursor-pointer" id="pins" onclick="usetool('pins');" title="Surgical Pins." />
-          <img class="w-16 h-14 cursor-pointer" id="clamp" onclick="usetool('clamp');" title="Surgical Clamp." />
-          <img class="w-16 h-14 cursor-pointer" id="transfusion" onclick="usetool('transfusion');"
-            title="Surgical Transfusion." />
-        </div>
-      </div>
-
-      <script>
-        setstats(Math.floor(Math.random() * 18));
-        draw();
-      </script>
-      </span>
 
 
-      <div class="flex flex-row justify-center gap-4 pt-6">
-        <div class="flex flex-col text-slate-100 bg-[#2B2D31] p-4 justify-center w-40 rounded-lg">
-          <span class=" font-semibold pb-1">Surgery skill: </span>
-          <div class="relative">
-            <input id="skill" max="100" min="0" type="number" value="100"
-              class="pl-3 pr-3 py-2 w-full placeholder:text-slate-400 bg-gray-700 text-slate-600 text-sm border border-slate-200 rounded-md transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
-              placeholder="1-100" />
-            <p class="flex items-start mt-2 text-xs text-slate-400">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-1.5">
-                <path fill-rule="evenodd"
-                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
-                  clip-rule="evenodd" />
-              </svg>
-              Default 100
-            </p>
-          </div>
-        </div>
-        <!-- Select Cases -->
-        <div class="flex flex-col text-slate-100 bg-[#2B2D31] p-4 justify-center w-[500px] rounded-lg">
-          <span class=" font-semibold pb-1">Select Case: </span>
-          <form>
-            <label for="search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-            <div class="relative">
-              <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                </svg>
+          <section class="flex w-full justify-center px-4 ">
+            <div class="growtopia-theme-box w-full max-w-[1400px] p-5 flex flex-col relative">
+              <div
+                class="growtopia-theme-box w-fit p-0.5 overflow-hidden absolute z-[101] -right-[17px] -top-[17px] bg-[#447180] hidden">
+                <img src="./wrench.png" alt="wrenc-menu"
+                  class="w-[25px] h-[25px] animate-[wiggle_3s_ease-in-out_infinite]">
               </div>
-              <input type="search" id="search"
-                class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Search" required />
+              <span class="text-[#fad785] text-lg font-bold">
+                <div class="flex flex-row justify-between">
+                  <div class="flex flex-row justify-start items-end gap-2 mb-2">
+                    <img src="./surg-e.png" alt="surg-e" class="w-10 h-10">
+                    <span class="text-2xl font-semibold text-[#F3C678]">Surg-E Anatomical Dummy</span>
+                  </div>
+                  <button id="opensetting"
+                    class="growtopia-button flex flex-row gap-1 px-2 h-11 justify-center items-center text-white font-semibold text-lg">
+                    <span class="text-white text-2xl">Setting</span>
+                    <img class="w-8 h-8 animate-[wiggle_3s_ease-in-out_infinite]" src="./wrench.png" alt="">
+                  </button>
+                </div>
+                <div id="date-ver" class="text-xl font-semibold text-white"></div>
+                <div id="surstat">
+                  The patient has not been diagnosed.
+                  <br>
+                  <div class="grid grid-cols-2 w-fit gap-x-2 gap-y-1">
+                    <div class="flex flex-row gap-0.5 w-auto">
+                      <span class="text-white font-semibold">Pulse : </span>
+                      <span class="text-white font-semibold">number</span>
+                    </div>
+                    <div class="flex flex-row gap-0.5">
+                      <span class="text-white font-semibold">Status : </span>
+                      <span class="text-white font-semibold">number</span>
+                    </div>
+                    <div class="flex flex-row gap-0.5 w-auto">
+                      <span class="text-white font-semibold">Temp : </span>
+                      <span class="text-white font-semibold">number</span>
+                    </div>
+                    <div class="flex flex-row gap-0.5">
+                      <span class="text-white font-semibold">Operation Site : </span>
+                      <span class="text-white font-semibold">number</span>
+                    </div>
+                    <div class="col-span-2">
+                      <span class="text-white font-semibold">Pulse : </span>
+                      <span class="text-white font-semibold">number</span>
+                    </div>
+                    <div class="flex flex-row gap-0.5">
+                      <span class="text-white font-semibold">Pulse : </span>
+                      <span class="text-white font-semibold">number</span>
+                    </div>
+                    <div class="flex flex-row gap-0.5">
+                      <span class="text-white font-semibold">Pulse : </span>
+                      <span class="text-white font-semibold">number</span>
+                    </div>
+                  </div>
+                  <br> <br> <br>
 
+                  <span class="w-20">Status: Awake</span>
+                  Pulse: <span class="text-[#46f013]">Strong</span>
+                  Status: <span class="text-[#f44849]">Awake</span><br>
+                  Temp: <span class="text-[#8cbde1]">100.4</span>
+                  Operation site: <span class="text-[#8cbde1]">Not sanitized</span><br>
+                  Incisions: <span class="text-[#46f013]">0</span><br><br>
+                  <span class="text-[#f44849]">[Skill Fail (30%)]</span>
+                  <span class="text-[#f3c670]">You spilled all of it! Kind of gross.</span>
+                </div>
+              </span>
+
+              <div class="flex flex-wrap gap-2 mt-4">
+                <img class="w-16 h-14 cursor-pointer" id="sponge" onclick="usetool('sponge');"
+                  title="Surgical Sponge." />
+                <img class="w-16 h-14 cursor-pointer" id="scalpel" onclick="usetool('scalpel');"
+                  title="Surgical Scalpel." />
+                <img class="w-16 h-14 cursor-pointer" id="stitches" onclick="usetool('stitches');"
+                  title="Surgical Stitches." />
+                <img class="w-16 h-14 cursor-pointer" id="antibiotics" onclick="usetool('antibiotics');"
+                  title="Surgical Antibiotics." />
+                <img class="w-16 h-14 cursor-pointer" id="antiseptic" onclick="usetool('antiseptic');"
+                  title="Surgical Antiseptic." />
+                <img class="w-16 h-14 cursor-pointer" id="fixit" onclick="usetool('fixit');" title="Surgical Glove." />
+                <img class="w-16 h-14 cursor-pointer" id="ultrasound" onclick="usetool('ultrasound');"
+                  title="Surgical Ultrasound." />
+              </div>
+
+              <div class="flex flex-wrap gap-2 mt-4">
+                <img class="w-16 h-14 cursor-pointer" id="labkit" onclick="usetool('labkit');"
+                  title="Surgical Lab Kit." />
+                <img class="w-16 h-14 cursor-pointer" id="anesthetic" onclick="usetool('anesthetic');"
+                  title="Surgical Anesthetic." />
+                <img class="w-16 h-14 cursor-pointer" id="defibrillator" onclick="usetool('defibrillator');"
+                  title="Surgical Defibrillator." />
+                <img class="w-16 h-14 cursor-pointer" id="splint" onclick="usetool('splint');"
+                  title="Surgical Splint." />
+                <img class="w-16 h-14 cursor-pointer" id="pins" onclick="usetool('pins');" title="Surgical Pins." />
+                <img class="w-16 h-14 cursor-pointer" id="clamp" onclick="usetool('clamp');" title="Surgical Clamp." />
+                <img class="w-16 h-14 cursor-pointer" id="transfusion" onclick="usetool('transfusion');"
+                  title="Surgical Transfusion." />
+              </div>
             </div>
-          </form>
-          <p class="flex items-start mt-2 text-xs text-slate-400">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-1.5">
-              <path fill-rule="evenodd"
-                d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
-                clip-rule="evenodd" />
-            </svg>
-            Default random
-          </p>
+            <script>
+              // date-ver
+              const datever = document.querySelector('#date-ver');
+              const date = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+              // open surgery setting
+              const openbutton = document.querySelector('#opensetting');
+              const settingtab = document.querySelector('#surgsetting');
+              const closebutton = document.querySelector('#closesetting');
+              openbutton.addEventListener('click', function () {
+                settingtab.classList.remove('hidden');
+                settingtab.classList.add('flex');
+                setTimeout(() => {
+                  settingtab.querySelector('.notif').classList.add('show');
+                }, 50);
+              })
+              closebutton.addEventListener('click', function () {
+                settingtab.querySelector('.notif').classList.remove('show');
+                setTimeout(() => {
+                  settingtab.classList.remove('flex');
+                  settingtab.classList.add('hidden');
+                }, 501);
+              })
+
+
+              datever.innerHTML = `${date}: <span class='text-[#FFA500]'>Version 1.00</span>`;
+              setstats(Math.floor(Math.random() * 18));
+              draw();
+              
+            </script>
+          </section>
+          <!-- end surg simulator -->
+          <h2 class="text-4xl font-bold text-center text-white w-full bg-[#E31C30]/70 py-4 px-4">Surgery Tools</h2>
+          <section class="py-5 flex flex-col justify-center items-center w-full gap-10 px-4">
+            <div class="w-full max-w-[1400px] flex flex-col gap-10 justify-center items-center relative">
+              <div class="grid md:grid-cols-2 gap-[30px]">
+                <div class="p-8 flex flex-row gap-6 growtopia-theme-box justify-center items-center">
+                  <img class="min-w-16" src="./surgical_sponge.png" alt="Polyethylene terephthalate">
+                  <div class="flex flex-col gap-1 w-full">
+                    <h2 class="font-semibold text-lg text-slate-50">Surgical Sponge</h2>
+                    <p class="text-sm text-slate-200">Used to clean up the operation site and make it easier to see. It
+                      is the
+                      only usable tool when the message "You can't see what you are doing!" is shown.</p>
+                  </div>
+                </div>
+                <div class="p-8 flex flex-row gap-6 growtopia-theme-box justify-center items-center">
+                  <img class="min-w-16" src="./surgical_splint.png" alt="Polyethylene terephthalate">
+                  <div class="flex flex-col gap-1 w-full">
+                    <h2 class="font-semibold text-lg text-slate-50">Surgical Splint</h2>
+                    <p class="text-sm text-slate-200">Used to fix fractures. If the patient has a broken bone, use this
+                      to fix
+                      it.</p>
+                  </div>
+                </div>
+                <div class="p-8 flex flex-row gap-6 growtopia-theme-box justify-center items-center">
+                  <img class="min-w-16" src="./surgical_antiseptic.png" alt="Polyethylene terephthalate">
+                  <div class="flex flex-col gap-1 w-full">
+                    <h2 class="font-semibold text-lg text-slate-50">Surgical Antiseptic</h2>
+                    <p class="text-sm text-slate-200">Used to clean the operation site. If the operation site is
+                      unsanitary,
+                      this can be used to make it clean. If the operation site has incisions or is bleeding and is
+                      unsanitary,
+                      a fever will start</p>
+                  </div>
+                </div>
+                <div class="p-8 flex flex-row gap-6 growtopia-theme-box justify-center items-center">
+                  <img class="min-w-16" src="./surgical_antibiotics.png" alt="Polyethylene terephthalate">
+                  <div class="flex flex-col gap-1 w-full">
+                    <h2 class="font-semibold text-lg text-slate-50">Surgical Antibiotics</h2>
+                    <p class="text-sm text-slate-200">Used when the patient has a fever. If the patient's fever is
+                      climbing,
+                      this can be used to lower the temperature. The patient's temperature cannot be lower than 98.6.
+                    </p>
+                  </div>
+                </div>
+                <div class="p-8 flex flex-row gap-6 growtopia-theme-box justify-center items-center">
+                  <img class="min-w-16" src="./surgical_anesthetic.png" alt="Polyethylene terephthalate">
+                  <div class="flex flex-col gap-1 w-full">
+                    <h2 class="font-semibold text-lg text-slate-50">Surgical Anesthetic</h2>
+                    <p class="text-sm text-slate-200">Used to put a patient to sleep, turning its Awake status to
+                      Unconscious.
+                      Surgical Scalpel must only be used when the patient is not awake.</p>
+                  </div>
+                </div>
+                <div class="p-8 flex flex-row gap-6 growtopia-theme-box justify-center items-center">
+                  <img class="min-w-16" src="./surgical_scalpel.png" alt="Polyethylene terephthalate">
+                  <div class="flex flex-col gap-1 w-full">
+                    <h2 class="font-semibold text-lg text-slate-50">Surgical Scalpel</h2>
+                    <p class="text-sm text-slate-200">Used to cut open the patient. The "Fix it" button will usually
+                      appear
+                      once the patient is diagnosed and enough incisions are made. It is also used to access shattered
+                      bones
+                      so that Surgical Pins can be used.
+                      Every use of scalpel causes slightly more bleeding.</p>
+                  </div>
+                </div>
+                <div class="p-8 flex flex-row gap-6 growtopia-theme-box justify-center items-center">
+                  <img class="min-w-16" src="./surgical_stitches.png" alt="Polyethylene terephthalate">
+                  <div class="flex flex-col gap-1 w-full">
+                    <h2 class="font-semibold text-lg text-slate-50">Surgical Stitches</h2>
+                    <p class="text-sm text-slate-200">Used to decrease bleeding and close up incisions. This tool is
+                      usually
+                      used when the patient is losing blood before a Surgical Scalpel has been used or after the "Fix
+                      it"
+                      button when the player's incisions need to be stitched up.</p>
+                  </div>
+                </div>
+                <div class="p-8 flex flex-row gap-6 growtopia-theme-box justify-center items-center">
+                  <img class="min-w-16" src="./surgical_labkit.png" alt="Polyethylene terephthalate">
+                  <div class="flex flex-col gap-1 w-full">
+                    <h2 class="font-semibold text-lg text-slate-50">Surgical Lab Kit</h2>
+                    <p class="text-sm text-slate-200">Used to unlock Surgical Antibiotics. Surgical Antibiotics cannot
+                      be used
+                      before using this tool.</p>
+                  </div>
+                </div>
+                <div class="p-8 flex flex-row gap-6 growtopia-theme-box justify-center items-center">
+                  <img class="min-w-16" src="./surgical_clamp.png" alt="Polyethylene terephthalate">
+                  <div class="flex flex-col gap-1 w-full">
+                    <h2 class="font-semibold text-lg text-slate-50">Surgical Clamp</h2>
+                    <p class="text-sm text-slate-200">Used to clamp up blood vessels. This tool can be used to decrease
+                      blood
+                      loss, but it can only be used if the patient has at least one incision. Less effective than
+                      Surgical
+                      Stitches.</p>
+                  </div>
+                </div>
+                <div class="p-8 flex flex-row gap-6 growtopia-theme-box justify-center items-center">
+                  <img class="min-w-16" src="./surgical_pins.png" alt="Polyethylene terephthalate">
+                  <div class="flex flex-col gap-1 w-full">
+                    <h2 class="font-semibold text-lg text-slate-50">Surgical Pins</h2>
+                    <p class="text-sm text-slate-200">Used to fix shattered bones. When used, a shattered bone turns
+                      into a
+                      broken bone. This item can only be used when the patient has at least one incision.</p>
+                  </div>
+                </div>
+                <div class="p-8 flex flex-row gap-6 growtopia-theme-box justify-center items-center">
+                  <img class="min-w-16" src="./surgical_transfusion.png" alt="Polyethylene terephthalate">
+                  <div class="flex flex-col gap-1 w-full">
+                    <h2 class="font-semibold text-lg text-slate-50">Surgical Transfusion</h2>
+                    <p class="text-sm text-slate-200">Used to transfuse several pints of blood into a patient. Increases
+                      the
+                      strength of the patient's pulse, which is an indication of how much blood the patient has.</p>
+                  </div>
+                </div>
+                <div class="p-8 flex flex-row gap-6 growtopia-theme-box justify-center items-center">
+                  <img class="min-w-16" src="./surgical_ultrasound.png" alt="Polyethylene terephthalate">
+                  <div class="flex flex-col gap-1 w-full">
+                    <h2 class="font-semibold text-lg text-slate-50">Surgical Ultrasound</h2>
+                    <p class="text-sm text-slate-200">Used to diagnose a patient. If the root cause is not a fever, the
+                      player
+                      must use this to discover the patient's condition. It will also reveal the number of broken and
+                      shattered bones.</p>
+                  </div>
+                </div>
+                <div class="p-8 flex flex-row gap-6 growtopia-theme-box justify-center items-center">
+                  <img class="min-w-16" src="./surgical_defibrilator.png" alt="Polyethylene terephthalate">
+                  <div class="flex flex-col gap-1 w-full">
+                    <h2 class="font-semibold text-lg text-slate-50">Surgical Defibrillator</h2>
+                    <p class="text-sm text-slate-200">Used to shock a patient back to life. If the patient's heart has
+                      stopped, this must be given to the patient within 2 moves or the patient will die and the surgery
+                      will
+                      fail.</p>
+                  </div>
+                </div>
+                <div class="p-8 flex flex-row gap-6 growtopia-theme-box justify-center items-center">
+                  <img class="min-w-16" src="./surgical_sponge.png" alt="Polyethylene terephthalate">
+                  <div class="flex flex-col gap-1 w-full">
+                    <h2 class="font-semibold text-lg text-slate-50">Surgical Sponge</h2>
+                    <p class="text-sm text-slate-200">Used to clean up the operation site and make it easier to see. It
+                      is the
+                      only usable tool when the message "You can't see what you are doing!" is shown.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- end surg tool -->
+          <section class="flex flex-col h-20 w-full items-center justify-center shadow shadow-gray-900 bg-[#1E1F22]/70">
+            <ul class="items-center flex flex-row gap-2.5 text-white shadow-2xs">
+              <li class="">Version 1.00</li>
+              <li class="">Copyright © GTSurg Simulator 2025. All rights reserved.</li>
+            </ul>
+            <ul class="items-center flex flex-row gap-2.5 text-white shadow-2xs">
+              <li class="">All spritesheets used in this simulator are copyright by ubisoft.</li>
+              <li class="">This planner is in no way affiliated with Ubisoft or Growtopia.</li>
+            </ul>
+          </section>
+
+
         </div>
+
       </div>
+      <!-- end container -->
+
+
     </section>
-    <section class="mt-10 py-10 flex justify-center items-center w-full">
-      <div class="w-full max-w-[1500px] flex flex-col gap-10 justify-center items-center relative px-6">
-        <h2 class="text-4xl font-bold text-center text-[#ABAFB2]">Surgery Tools</h2>
-        <div class="grid md:grid-cols-2 gap-[30px]">
-          <div class="p-8 flex flex-row gap-6 bg-[#383A40] justify-center items-center rounded-2xl">
-            <img class="min-w-16" src="./surgical_sponge.png" alt="Polyethylene terephthalate">
-            <div class="flex flex-col gap-1 w-full">
-              <h2 class="font-semibold text-lg text-slate-50">Surgical Sponge</h2>
-              <p class="text-sm text-slate-200">Used to clean up the operation site and make it easier to see. It is the
-                only usable tool when the message "You can't see what you are doing!" is shown.</p>
-            </div>
-          </div>
-          <div class="p-8 flex flex-row gap-6 bg-[#383A40] justify-center items-center rounded-2xl">
-            <img class="min-w-16" src="./surgical_splint.png" alt="Polyethylene terephthalate">
-            <div class="flex flex-col gap-1 w-full">
-              <h2 class="font-semibold text-lg text-slate-50">Surgical Splint</h2>
-              <p class="text-sm text-slate-200">Used to fix fractures. If the patient has a broken bone, use this to fix
-                it.</p>
-            </div>
-          </div>
-          <div class="p-8 flex flex-row gap-6 bg-[#383A40] justify-center items-center rounded-2xl">
-            <img class="min-w-16" src="./surgical_antiseptic.png" alt="Polyethylene terephthalate">
-            <div class="flex flex-col gap-1 w-full">
-              <h2 class="font-semibold text-lg text-slate-50">Surgical Antiseptic</h2>
-              <p class="text-sm text-slate-200">Used to clean the operation site. If the operation site is unsanitary,
-                this can be used to make it clean. If the operation site has incisions or is bleeding and is unsanitary,
-                a fever will start</p>
-            </div>
-          </div>
-          <div class="p-8 flex flex-row gap-6 bg-[#383A40] justify-center items-center rounded-2xl">
-            <img class="min-w-16" src="./surgical_antibiotics.png" alt="Polyethylene terephthalate">
-            <div class="flex flex-col gap-1 w-full">
-              <h2 class="font-semibold text-lg text-slate-50">Surgical Antibiotics</h2>
-              <p class="text-sm text-slate-200">Used when the patient has a fever. If the patient's fever is climbing,
-                this can be used to lower the temperature. The patient's temperature cannot be lower than 98.6.</p>
-            </div>
-          </div>
-          <div class="p-8 flex flex-row gap-6 bg-[#383A40] justify-center items-center rounded-2xl">
-            <img class="min-w-16" src="./surgical_anesthetic.png" alt="Polyethylene terephthalate">
-            <div class="flex flex-col gap-1 w-full">
-              <h2 class="font-semibold text-lg text-slate-50">Surgical Anesthetic</h2>
-              <p class="text-sm text-slate-200">Used to put a patient to sleep, turning its Awake status to Unconscious.
-                Surgical Scalpel must only be used when the patient is not awake.</p>
-            </div>
-          </div>
-          <div class="p-8 flex flex-row gap-6 bg-[#383A40] justify-center items-center rounded-2xl">
-            <img class="min-w-16" src="./surgical_scalpel.png" alt="Polyethylene terephthalate">
-            <div class="flex flex-col gap-1 w-full">
-              <h2 class="font-semibold text-lg text-slate-50">Surgical Scalpel</h2>
-              <p class="text-sm text-slate-200">Used to cut open the patient. The "Fix it" button will usually appear
-                once the patient is diagnosed and enough incisions are made. It is also used to access shattered bones
-                so that Surgical Pins can be used.
-                Every use of scalpel causes slightly more bleeding.</p>
-            </div>
-          </div>
-          <div class="p-8 flex flex-row gap-6 bg-[#383A40] justify-center items-center rounded-2xl">
-            <img class="min-w-16" src="./surgical_stitches.png" alt="Polyethylene terephthalate">
-            <div class="flex flex-col gap-1 w-full">
-              <h2 class="font-semibold text-lg text-slate-50">Surgical Stitches</h2>
-              <p class="text-sm text-slate-200">Used to decrease bleeding and close up incisions. This tool is usually
-                used when the patient is losing blood before a Surgical Scalpel has been used or after the "Fix it"
-                button when the player's incisions need to be stitched up.</p>
-            </div>
-          </div>
-          <div class="p-8 flex flex-row gap-6 bg-[#383A40] justify-center items-center rounded-2xl">
-            <img class="min-w-16" src="./surgical_labkit.png" alt="Polyethylene terephthalate">
-            <div class="flex flex-col gap-1 w-full">
-              <h2 class="font-semibold text-lg text-slate-50">Surgical Lab Kit</h2>
-              <p class="text-sm text-slate-200">Used to unlock Surgical Antibiotics. Surgical Antibiotics cannot be used
-                before using this tool.</p>
-            </div>
-          </div>
-          <div class="p-8 flex flex-row gap-6 bg-[#383A40] justify-center items-center rounded-2xl">
-            <img class="min-w-16" src="./surgical_clamp.png" alt="Polyethylene terephthalate">
-            <div class="flex flex-col gap-1 w-full">
-              <h2 class="font-semibold text-lg text-slate-50">Surgical Clamp</h2>
-              <p class="text-sm text-slate-200">Used to clamp up blood vessels. This tool can be used to decrease blood
-                loss, but it can only be used if the patient has at least one incision. Less effective than Surgical
-                Stitches.</p>
-            </div>
-          </div>
-          <div class="p-8 flex flex-row gap-6 bg-[#383A40] justify-center items-center rounded-2xl">
-            <img class="min-w-16" src="./surgical_pins.png" alt="Polyethylene terephthalate">
-            <div class="flex flex-col gap-1 w-full">
-              <h2 class="font-semibold text-lg text-slate-50">Surgical Pins</h2>
-              <p class="text-sm text-slate-200">Used to fix shattered bones. When used, a shattered bone turns into a
-                broken bone. This item can only be used when the patient has at least one incision.</p>
-            </div>
-          </div>
-          <div class="p-8 flex flex-row gap-6 bg-[#383A40] justify-center items-center rounded-2xl">
-            <img class="min-w-16" src="./surgical_transfusion.png" alt="Polyethylene terephthalate">
-            <div class="flex flex-col gap-1 w-full">
-              <h2 class="font-semibold text-lg text-slate-50">Surgical Transfusion</h2>
-              <p class="text-sm text-slate-200">Used to transfuse several pints of blood into a patient. Increases the
-                strength of the patient's pulse, which is an indication of how much blood the patient has.</p>
-            </div>
-          </div>
-          <div class="p-8 flex flex-row gap-6 bg-[#383A40] justify-center items-center rounded-2xl">
-            <img class="min-w-16" src="./surgical_ultrasound.png" alt="Polyethylene terephthalate">
-            <div class="flex flex-col gap-1 w-full">
-              <h2 class="font-semibold text-lg text-slate-50">Surgical Ultrasound</h2>
-              <p class="text-sm text-slate-200">Used to diagnose a patient. If the root cause is not a fever, the player
-                must use this to discover the patient's condition. It will also reveal the number of broken and
-                shattered bones.</p>
-            </div>
-          </div>
-          <div class="p-8 flex flex-row gap-6 bg-[#383A40] justify-center items-center rounded-2xl">
-            <img class="min-w-16" src="./surgical_defibrilator.png" alt="Polyethylene terephthalate">
-            <div class="flex flex-col gap-1 w-full">
-              <h2 class="font-semibold text-lg text-slate-50">Surgical Defibrillator</h2>
-              <p class="text-sm text-slate-200">Used to shock a patient back to life. If the patient's heart has
-                stopped, this must be given to the patient within 2 moves or the patient will die and the surgery will
-                fail.</p>
-            </div>
-          </div>
-          <div class="p-8 flex flex-row gap-6 bg-[#383A40] justify-center items-center rounded-2xl">
-            <img class="min-w-16" src="./surgical_sponge.png" alt="Polyethylene terephthalate">
-            <div class="flex flex-col gap-1 w-full">
-              <h2 class="font-semibold text-lg text-slate-50">Surgical Sponge</h2>
-              <p class="text-sm text-slate-200">Used to clean up the operation site and make it easier to see. It is the
-                only usable tool when the message "You can't see what you are doing!" is shown.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+
+
+
+
+
 
 
   </main>
-  <footer class="flex flex-col h-16 w-full items-center shadow shadow-gray-900">
-    <ul class="items-center flex flex-row gap-2.5 text-slate-200">
-      <li class="">Version 1.54</li>
-      <li class="">Copyright © GTSurg Simulator 2025. All rights reserved.</li>
-    </ul>
-    <ul class="items-center flex flex-row gap-2.5 text-slate-200">
-      <li class="">All spritesheets used in this simulator are copyright by ubisoft.</li>
-      <li class="">This planner is in no way affiliated with Ubisoft or Growtopia.</li>
-    </ul>
-  </footer>
+
+
 </body>
 
 </html>
