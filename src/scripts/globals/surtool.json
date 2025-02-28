@@ -1,0 +1,146 @@
+{
+  "en": [
+    {
+      "toolname": "Surgical Sponge",
+      "tooldo": "Used to clean up the operation site and make it easier to see. It is the only usable tool when the message 'You can't see what you are doing!' is shown.",
+      "img": "./surgical_sponge.webp"
+    },
+    {
+      "toolname": "Surgical Splint",
+      "tooldo": "Used to fix fractures. If the patient has a broken bone, use this to fix it.",
+      "img": "./surgical_splint.webp"
+    },
+    {
+      "toolname": "Surgical Antiseptic",
+      "tooldo": "Used to clean the operation site. If the operation site is unsanitary, this can be used to make it clean. If the operation site has incisions or is bleeding and is unsanitary, a fever will start.",
+      "img": "./surgical_antiseptic.webp"
+    },
+    {
+      "toolname": "Surgical Antibiotics",
+      "tooldo": "Used when the patient has a fever. If the patient's fever is climbing, this can be used to lower the temperature. The patient's temperature cannot be lower than 98.6.",
+      "img": "./surgical_antibiotics.webp"
+    },
+    {
+      "toolname": "Surgical Anesthetic",
+      "tooldo": "Used to put a patient to sleep, turning its Awake status to Unconscious. Surgical Scalpel must only be used when the patient is not awake.",
+      "img": "./surgical_anesthetic.webp"
+    },
+    {
+      "toolname": "Surgical Scalpel",
+      "tooldo": "Used to cut open the patient. The 'Fix it' button will usually appear once the patient is diagnosed and enough incisions are made. It is also used to access shattered bones so that Surgical Pins can be used. Every use of scalpel causes slightly more bleeding.",
+      "img": "./surgical_scalpel.webp"
+    },
+    {
+      "toolname": "Surgical Stitches",
+      "tooldo": "Used to decrease bleeding and close up incisions. This tool is usually used when the patient is losing blood before a Surgical Scalpel has been used or after the 'Fix it' button when the player's incisions need to be stitched up.",
+      "img": "./surgical_stitches.webp"
+    },
+    {
+      "toolname": "Surgical Lab Kit",
+      "tooldo": "Used to unlock Surgical Antibiotics. Surgical Antibiotics cannot be used before using this tool.",
+      "img": "./surgical_labkit.webp"
+    },
+    {
+      "toolname": "Surgical Clamp",
+      "tooldo": "Used to clamp up blood vessels. This tool can be used to decrease blood loss, but it can only be used if the patient has at least one incision. Less effective than Surgical Stitches.",
+      "img": "./surgical_clamp.webp"
+    },
+    {
+      "toolname": "Surgical Pins",
+      "tooldo": "Used to fix shattered bones. When used, a shattered bone turns into a broken bone. This item can only be used when the patient has at least one incision.",
+      "img": "./surgical_pins.webp"
+    },
+    {
+      "toolname": "Surgical Transfusion",
+      "tooldo": "Used to transfuse several pints of blood into a patient. Increases the strength of the patient's pulse, which is an indication of how much blood the patient has.",
+      "img": "./surgical_transfusion.webp"
+    },
+    {
+      "toolname": "Surgical Ultrasound",
+      "tooldo": "Used to diagnose a patient. If the root cause is not a fever, the player must use this to discover the patient's condition. It will also reveal the number of broken and shattered bones.",
+      "img": "./surgical_ultrasound.webp"
+    },
+    {
+      "toolname": "Surgical Defibrillator",
+      "tooldo": "Used to shock a patient back to life. If the patient's heart has stopped, this must be given to the patient within 2 moves or the patient will die and the surgery will fail.",
+      "img": "./surgical_defibrilator.webp"
+    },
+    {
+      "toolname": "Surgical Gloves",
+      "tooldo": "You will only see the Surgical Gloves when they are needed, such as after making Incisions to correct an internal issue (nose jobs, tumors, internal bleeding, etc), or to simply cure issues such as Hypochondria.",
+      "img": "./surgical_gloves.webp"
+    }
+  ],
+  "id": [
+    {
+      "toolname": "Surgical Sponge",
+      "tooldo": "Digunakan untuk membersihkan area operasi dan membuatnya lebih mudah terlihat. Ini adalah satu-satunya alat yang dapat digunakan ketika muncul pesan 'Anda tidak bisa melihat apa yang Anda lakukan!'.",
+      "img": "./surgical_sponge.webp"
+    },
+    {
+      "toolname": "Surgical Splint",
+      "tooldo": "Digunakan untuk memperbaiki patah tulang. Jika pasien mengalami patah tulang, gunakan ini untuk memperbaikinya.",
+      "img": "./surgical_splint.webp"
+    },
+    {
+      "toolname": "Surgical Antiseptic",
+      "tooldo": "Digunakan untuk membersihkan area operasi. Jika area operasi tidak steril, alat ini dapat digunakan untuk membersihkannya. Jika area operasi memiliki sayatan atau berdarah dan tidak steril, demam akan mulai terjadi.",
+      "img": "./surgical_antiseptic.webp"
+    },
+    {
+      "toolname": "Surgical Antibiotics",
+      "tooldo": "Digunakan ketika pasien mengalami demam. Jika suhu tubuh pasien terus meningkat, alat ini dapat digunakan untuk menurunkannya. Suhu tubuh pasien tidak dapat lebih rendah dari 98.6°F.",
+      "img": "./surgical_antibiotics.webp"
+    },
+    {
+      "toolname": "Surgical Anesthetic",
+      "tooldo": "Digunakan untuk membuat pasien tidak sadarkan diri, mengubah statusnya dari Sadar menjadi Tidak Sadar. Surgical Scalpel hanya boleh digunakan ketika pasien tidak sadar.",
+      "img": "./surgical_anesthetic.webp"
+    },
+    {
+      "toolname": "Surgical Scalpel",
+      "tooldo": "Digunakan untuk membuat sayatan pada pasien. Tombol 'Perbaiki' biasanya akan muncul setelah pasien didiagnosis dan cukup banyak sayatan telah dibuat. Alat ini juga digunakan untuk mengakses tulang yang hancur agar Surgical Pins bisa digunakan. Setiap penggunaan scalpel menyebabkan pendarahan lebih banyak.",
+      "img": "./surgical_scalpel.webp"
+    },
+    {
+      "toolname": "Surgical Stitches",
+      "tooldo": "Digunakan untuk mengurangi pendarahan dan menutup sayatan. Alat ini biasanya digunakan ketika pasien kehilangan darah sebelum Surgical Scalpel digunakan atau setelah tombol 'Perbaiki' ditekan untuk menjahit sayatan.",
+      "img": "./surgical_stitches.webp"
+    },
+    {
+      "toolname": "Surgical Lab Kit",
+      "tooldo": "Digunakan untuk membuka akses ke Surgical Antibiotics. Surgical Antibiotics tidak dapat digunakan sebelum alat ini digunakan.",
+      "img": "./surgical_labkit.webp"
+    },
+    {
+      "toolname": "Surgical Clamp",
+      "tooldo": "Digunakan untuk menjepit pembuluh darah. Alat ini dapat digunakan untuk mengurangi kehilangan darah, tetapi hanya jika pasien memiliki setidaknya satu sayatan. Efektivitasnya lebih rendah dibandingkan dengan Surgical Stitches.",
+      "img": "./surgical_clamp.webp"
+    },
+    {
+      "toolname": "Surgical Pins",
+      "tooldo": "Digunakan untuk memperbaiki tulang yang hancur. Saat digunakan, tulang yang hancur akan berubah menjadi patah tulang. Alat ini hanya dapat digunakan jika pasien memiliki setidaknya satu sayatan.",
+      "img": "./surgical_pins.webp"
+    },
+    {
+      "toolname": "Surgical Transfusion",
+      "tooldo": "Digunakan untuk mentransfusi beberapa kantong darah ke dalam tubuh pasien. Meningkatkan kekuatan denyut nadi pasien, yang menunjukkan jumlah darah yang dimiliki pasien.",
+      "img": "./surgical_transfusion.webp"
+    },
+    {
+      "toolname": "Surgical Ultrasound",
+      "tooldo": "Digunakan untuk mendiagnosis pasien. Jika penyebab utama bukan demam, alat ini harus digunakan untuk mengetahui kondisi pasien. Alat ini juga akan menunjukkan jumlah tulang yang patah dan hancur.",
+      "img": "./surgical_ultrasound.webp"
+    },
+    {
+      "toolname": "Surgical Defibrillator",
+      "tooldo": "Digunakan untuk menyetrum pasien agar hidup kembali. Jika jantung pasien berhenti, alat ini harus digunakan dalam 2 langkah atau pasien akan meninggal dan operasi akan gagal.",
+      "img": "./surgical_defibrilator.webp"
+    },
+    {
+      "toolname": "Surgical Gloves",
+      "tooldo": "Surgical Gloves hanya akan muncul ketika dibutuhkan, seperti setelah membuat sayatan untuk memperbaiki masalah internal (operasi hidung, tumor, pendarahan internal, dll), atau untuk menyembuhkan kondisi seperti Hipokondria.",
+      "img": "./surgical_gloves.webp"
+    }
+  ]
+}

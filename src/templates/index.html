@@ -5,1562 +5,262 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Free movie catalogue for you">
-  <link rel="icon" href="./logo.jpeg">
+  <link rel="icon" href="./logo.webp">
 
   <title>Growtopia Surgery Simulator</title>
 </head>
 
-<body class="flex flex-col w-full h-screen items-center">
+<body class="flex flex-col w-full h-screen items-center relative">
   <header
-    class="flex min-h-20 h-20 max-h-20 fixed top-0 bg-[#1E1F22] z-[999] flex-row w-full justify-center shadow shadow-[#383A40]">
-    <div class="flex flex-row w-full max-w-[1400px] justify-between px-5">
-      <div class="items-center flex flex-row gap-2.5">
-        <img src="./goldcadu.png" alt="Gold Cadusesu Logo">
+    class="flex min-h-20 h-20 max-h-20 fixed top-0 bg-[#1E1F22] z-[999] flex-row justify-center w-full border-b border-[#2B2D31]/90 px-5">
+    <div class="flex flex-row w-full max-w-[1400px] justify-between">
+      <a href="#/" class="items-center flex flex-row gap-2.5">
+        <img src="./goldcadu.webp" alt="Gold Cadusesu Logo">
         <h1 class="text-xl capitalize font-semibold text-teal-600">GTSURG SIMULATOR</h1>
-      </div>
-      <nav id="navigationDrawer" class="flex flex-row">
-        <ul class="flex flex-row items-center gap-6">
-          <li class=" text-stone-500 font-semibold"><a href="#/now-playing">Tips</a></li>
-          <li class=" text-stone-500 font-semibold"><a href="#/upcoming">Upcoming</a></li>
+      </a>
+      <nav class="flex flex-row">
+        <button id="hamburger" class=" h-full aspect-square hidden justify-end items-center max-[500px]:flex">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu w-8 h-8 text-white text-right">
+            <line x1="4" x2="20" y1="12" y2="12" />
+            <line x1="4" x2="20" y1="6" y2="6" />
+            <line x1="4" x2="20" y1="18" y2="18" />
+          </svg>
+        </button>
+        <ul id="navbar"
+          class="flex flex-row items-center gap-6 max-[500px]:flex-col max-[500px]:fixed max-[500px]:top-20 ease-0 duration-300 max-[500px]:right-[-260px] max-[500px]:h-screen max-[500px]:z-[999] max-[500px]:bg-[#1E1F22]">
+          <li
+            class=" text-stone-500 font-semibold max-[500px]:text-right max-[500px]:text-lg max-[500px]:px-5 max-[500px]:w-64 max-[500px]:h-15">
+            <a href="#/surgery-tips">Tips</a>
+          </li>
+          <li
+            class=" text-stone-500 font-semibold max-[500px]:text-right max-[500px]:text-lg max-[500px]:px-5 max-[500px]:w-64 max-[500px]:h-15">
+            <a href="#/upcoming">Upcoming</a>
+          </li>
         </ul>
       </nav>
     </div>
 
   </header>
-  <main id="mainContent" class="flex grow flex-col w-full items-center mt-20">
-    <section id="surgsetting" class="hidden flex-col  w-screen h-screen bg-black/50 fixed top-0 items-center px-4 z-[999]">
-      <div class="flex flex-row mt-40 justify-between pt-6 w-fit notif">
-        <div class="flex flex-col justify-center items-center w-full growtopia-theme-box p-4">
-          <p class="flex items-center text-xs text-slate-300">
-            *Form will auto-submit, close when the setup is complete.
-          </p>
-          <div class="flex flex-row justify-between items-center w-full">
-            <div class="flex flex-col justify-center ">
-              <span class=" font-semibold text-white pb-1">Select Case: </span>
-              <form>
-                <label for="search" class="mb-2 text-sm font-medium text-white sr-only">Search</label>
-                <div class="relative">
-                  <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                    <svg class="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                      viewBox="0 0 20 20">
-                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                    </svg>
-                  </div>
-                  <input type="search" id="search"
-                    class="block w-full p-2 ps-10 text-sm growtopia-theme-box focus:outline-0 placeholder:text-slate-300 text-white"
-                    placeholder="Search" required />
-
-                </div>
-              </form>
-              <p class="flex items-center mt-2 text-xs text-slate-300">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-1.5">
-                  <path fill-rule="evenodd"
-                    d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
-                    clip-rule="evenodd" />
-                </svg>
-                Default random
-              </p>
+  <main id="mainContent" class="flex grow flex-col w-full h-fit items-center mt-20 relative">
+    <div class="bg-black/80 py-5 flex flex-col min-h-screen items-center w-full gap-5 px-4 max-[460px]:px-2">
+      <section class="growtopia-theme-box w-full max-w-[1400px] p-5 flex flex-col items-center">
+        <h1 class="text-4xl font-extrabold text-center text-white drop-shadow-2xl max-[535px]:text-2xl">Panduan Surgery
+          untuk pemula di Growtopia.</h1>
+        <span class="text-slate-100 text-center font-semibold text-md max-[535px]:text-xs">(Panduan dibuat berdasarkan
+          kemampuan penulis)</span>
+      </section>
+      <section class="growtopia-theme-box w-full max-w-[1400px] p-5 flex flex-col">
+        <h1 class="text-2xl font-extrabold text-white drop-shadow-2xl max-[535px]:text-xl">Fungsi Surgical
+          Tools</h1>
+        <span class="text-slate-100 font-semibold text-base max-[535px]:text-xs">Daftar dan fungsi tool surgery yang
+          krusial ketika bedah dimulai : </span>
+        <ul class="space-y-1 text-white/80 list-disc list-inside">
+          <li class="flex flex-row gap-1 w-full items-center">
+            <div class="w-fit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-paperclip">
+                <path d="M13.234 20.252 21 12.3" />
+                <path
+                  d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
+              </svg></div>
+            <div class="">
+              <span class="text-lime-300">Surgical Anesthetic:</span> Anesthetic digunakan untuk membuat pasien menjadi
+              tak sadarkan diri.
+              Status
+              pemain tersebut akan berubah dari Awake ke Unconscious. Hal ini penting sebelum kamu memutuskan untuk
+              memulai pembedahan.
             </div>
-            <div class="flex flex-col justify-center">
-              <span class=" font-semibold text-white pb-1">Surgery skill: </span>
-              <div class="relative">
-                <input id="skill" max="100" min="0" type="number" value="100"
-                  class="block w-full p-2 text-sm growtopia-theme-box focus:outline-0 placeholder:text-slate-300 text-white"
-                  placeholder="1-100" />
-                <p class="flex items-center mt-2 text-xs text-slate-300">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                    class="w-5 h-5 mr-1.5">
-                    <path fill-rule="evenodd"
-                      d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
-                      clip-rule="evenodd" />
-                  </svg>
-                  Default 100
-                </p>
-              </div>
+          </li>
+          <li class="flex flex-row gap-1 w-full items-center">
+            <div class="w-fit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-paperclip">
+                <path d="M13.234 20.252 21 12.3" />
+                <path
+                  d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
+              </svg></div>
+            <div class="">
+              <span class="text-lime-300">Surgical Antibiotics:</span> Antibiotics digunakan untuk menurunkan suhu panas
+              atau demam yang ditandai dengan munculnya tulisan "Patient's fever is climbing".
             </div>
-          </div>
-          <button id="closesetting"
-            class="growtopia-button px-3 py-1 self-end text-xl text-white font-semibold mt-4">Close</button>
-        </div>
+          </li>
 
-      </div>
-      <!-- Select Cases -->
-
-    </section>
-    <section class="w-full h-full relative justify-center items-center pb-5 flex flex-col">
-      <div class="bg-black absolute top-0 w-full h-[1000px]">
-        <!-- <img class="opacity-60 h-[600px]" src="./bgweather.png" alt="BG">
-          -->
-        <div class="bg-[url(./../../public/bgweather.png)] h-full w-full flex bg-bottom opacity-50"></div>
-      </div>
-      <!-- <section
-        class="w-full grow justify-center items-end pb-5 bg-[url(./../../public/bedrock.png)] bg-blend-overlay bg-bottom">
-        <div class="h-full"></div>
-      </section> -->
-      <script>
-        // Stats variables
-        var sounded = false;
-        var labworked = false;
-        var fixed = false;
-        var fixable = false;
-        var flu = false;
-        var pulse = 40;
-        var site = 0;
-        var sleep = 0;
-        var dirt = 0;
-        var broken = 0;
-        var shattered = 0;
-        var incisions = 0;
-        var bleeding = 0;
-        var incneeded = 0;
-        var heart = 0;
-        var temp = 98.6;
-        var fever = 0.0;
-        var pretext = '';
-        var fixtext = '';
-        var postext = '';
-        var scantext = '';
-        var tooltext = 'The patient is prepped for surgery.';
-        var endtext = '';
-        var failchance = 0;
-        var s = true;
-        var antibs = false;
-        var bans = 0;
-        var selfbans = 0;
-
-        var spongUsed = 0;
-        var scalpUsed = 0;
-        var stitcUsed = 0;
-        var antibUsed = 0;
-        var antisUsed = 0;
-        var ultraUsed = 0;
-        var labkiUsed = 0;
-        var anestUsed = 0;
-        var defibUsed = 0;
-        var splinUsed = 0;
-        var pinsUsed = 0;
-        var clampUsed = 0;
-        var transUsed = 0;
-
-        function prizetext() {
-          var rnd = Math.floor(Math.random() * 1001);
-          if (rnd == 0)
-            return 'Thingamabob'
-          else if (rnd == 1)
-            return 'Magnifying Glass'
-          else if (rnd < 5)
-            return 'Edison Zoomster'
-          else if (rnd < 9)
-            return 'Medical Scarf'
-          else if (rnd < 15)
-            return 'DNA Processor'
-          else if (rnd < 20)
-            return 'Techno Visor'
-          else if (rnd < 25)
-            return 'Cybernetic Eye'
-          else if (rnd < 30)
-            return 'Autoclave'
-          else if (rnd < 35)
-            return 'Steel Spike'
-          else if (rnd < 40)
-            return 'Wolf Whistle'
-          else if (rnd < 45)
-            return 'Antidote';
-          else if (rnd < 50)
-            return 'Legal Briefs'
-          else if (rnd < 90)
-            return 'Scrub Cap'
-          else if (rnd < 130)
-            return 'Scrub Mask'
-          else if (rnd < 170)
-            return 'Scrub Top'
-          else if (rnd < 210)
-            return 'Scrub Pants'
-          else if (rnd < 250)
-            return 'Candy Striper Hat'
-          else if (rnd < 290)
-            return 'Candy Striper Uniform'
-          else if (rnd < 330)
-            return 'Candy Striper Skirt'
-          else if (rnd < 370)
-            return 'Hospital Wall'
-          else if (rnd < 410)
-            return 'Hospital Window'
-          else if (rnd < 450)
-            return 'Hospital Curtain'
-          else if (rnd < 490)
-            return 'Hospital Bed'
-          else if (rnd < 510)
-            return 'Homeopathic Medicine'
-          else if (rnd < 580)
-            return 'Surgical Scalpel'
-          else if (rnd < 650)
-            return 'Surgical Stitches'
-          else if (rnd < 720)
-            return 'Surgical Sponge'
-          else if (rnd < 790)
-            return 'Surgical Antiseptic'
-          else if (rnd < 860)
-            return 'Surgical Anesthetic'
-          else if (rnd < 930)
-            return 'Surgical Antibiotics'
-          else
-            return 'Surgical Splint';
-
-        }
-        function colorize(s, c) {
-          var res = '<font color="';
-          switch (c) {
-            case 'green':
-              res += '46f013';
-              break;
-            case 'blue':
-              res += '8cbde1';
-              break;
-            case 'orange':
-              res += 'f3c670';
-              break;
-            case 'red':
-              res += 'f44849';
-              break;
-          }
-          res += '">' + s + '</font>';
-          return res;
-        }
-        function toolavailable(s) {
-          if (dirt == 10 && s != 'sponge' && s != 'ban' && s != '')
-            result = false
-          else
-            switch (s) {
-              case 'sponge':
-                return true;
-              case 'antibiotics':
-                return labworked;
-              case 'fixit':
-                return fixable && !fixed;
-              case 'ultrasound':
-                return !sounded;
-              case 'labkit':
-                return !labworked;
-              case 'defibrillator':
-                return heart > 0;
-              case 'splint':
-                return broken > 0;
-              case 'pins':
-                return shattered > 0 && incisions > 0;
-              case 'clamp':
-                return incisions > 0 && bleeding > 0;
-              default:
-                return true;
-            }
-        }
-        function draw() {
-          var drawbox = document.getElementById("surstat");
-          drawbox.innerHTML = '';
-          if (!sounded && !flu || !labworked && flu)
-            drawbox.innerHTML += colorize('The patient has not been diagnosed.', 'red');
-          else if (!fixable || flu || incneeded == 0)
-            drawbox.innerHTML += (pretext)
-          else if (!fixed)
-            drawbox.innerHTML += (fixtext)
-          else
-            drawbox.innerHTML += (postext);
-          // Separator
-          drawbox.innerHTML += '<br>';
-          // container
-          const surginfo = document.createElement('div');
-          const surginfoclasses = ['grid', 'grid-cols-2', 'w-fit', 'gap-x-4', 'gap-y-1']
-          surginfo.classList.add(...surginfoclasses);
-          // Pulse
-          if (pulse < 11) {
-            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
-        <span class="text-white font-semibold">Pulse : </span>
-        <span class="text-[#F44849] font-semibold">Extremely Weak</span>
-    </div>`;
-          } else if (pulse < 21) {
-            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
-        <span class="text-white font-semibold">Pulse : </span>
-        <span class="text-[#F3C678] font-semibold">Weak</span>
-    </div>`;
-          } else if (pulse < 31) {
-            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
-        <span class="text-white font-semibold">Pulse : </span>
-        <span class="text-[#7EBDE1] font-semibold">Steady</span>
-    </div>`;
-          } else {
-            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
-        <span class="text-white font-semibold">Pulse : </span>
-        <span class="text-[#2ED413] font-semibold">Strong</span>
-    </div>`;
-          }
-
-          // Status
-          if (heart > 0)
-            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
-        <span class="text-white font-semibold">Status : </span>
-        <span class="text-[#F44849] font-semibold">Heart stopped!</span>
-    </div>`;
-          else if (sleep == 0)
-            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
-    <span class="text-white font-semibold">Status : </span>
-    <span class="${fixed ? 'text-[#7EBDE1]' : 'text-[#F44849]'} font-semibold">Awake</span>
-</div>`;
-          else if (sleep < 3)
-            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
-        <span class="text-white font-semibold">Status : </span>
-        <span class="text-[#F3C678] font-semibold">Coming to</span>
-    </div>`
-          else
-            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
-        <span class="text-white font-semibold">Status : </span>
-        <span class="text-[#2ED413] font-semibold">Unconcsious</span>
-    </div>`;
-          // Temp
-          if (temp < 100)
-            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
-        <span class="text-white font-semibold">Temp : </span>
-        <span class="text-[#2ED413] font-semibold">${temp}</span>
-    </div>`;
-          else if (temp < 104)
-            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
-        <span class="text-white font-semibold">Temp : </span>
-        <span class="text-[#7EBDE1] font-semibold">${temp}</span>
-    </div>`;
-          else if (temp < 106)
-            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
-        <span class="text-white font-semibold">Temp : </span>
-        <span class="text-[#F3C678] font-semibold">${temp}</span>
-    </div>`;
-          else
-            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
-        <span class="text-white font-semibold">Temp : </span>
-        <span class="text-[#F44849] font-semibold">${temp}</span>
-    </div>`;
-          // Operation site
-          if (site < -3)
-            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
-        <span class="text-white font-semibold">Operation site : </span>
-        <span class="text-[#F44849] font-semibold">Unsanitary</span>
-    </div>`;
-          else if (site < -1)
-            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
-        <span class="text-white font-semibold">Operation site : </span>
-        <span class="text-[#F3C678] font-semibold">Unclean</span>
-    </div>`;
-          else if (site < 1)
-            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
-        <span class="text-white font-semibold">Operation site : </span>
-        <span class="text-[#7EBDE1] font-semibold">Not sanitized</span>
-    </div>`;
-          else surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
-        <span class="text-white font-semibold">Operation site : </span>
-        <span class="text-[#2ED413] font-semibold">Clean</span>
-    </div>`;
-          // Dirt
-          if (dirt == 10)
-            surginfo.innerHTML += `<div class="col-span-2">
-                <span class="text-[#F44849] font-semibold">You can\'t see what you are doing!</span>
-              </div>`;
-          else if (dirt > 4)
-            surginfo.innerHTML += `<div class="col-span-2">
-                <span class="text-[#F3C678] font-semibold">It is becoming hard to see your work.</span>
-              </div>`;
-          // Incisions
-          if (incisions == 0)
-            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
-        <span class="text-white font-semibold">Incisions : </span>
-        <span class="text-[#2ED413] font-semibold">${incisions}</span>
-    </div>`;
-          else
-            surginfo.innerHTML += `<div class="flex flex-row gap-0.5 w-auto">
-        <span class="text-white font-semibold">Incisions : </span>
-        <span class="text-[#7EBDE1] font-semibold">${incisions}</span>
-    </div>`
-          // Bones
-          if (broken + shattered > 0 && sounded) {
-            const bonescontainer = document.createElement('div');
-            const bonescontainerclasses = ['flex', 'flex-row', 'gap-0.5'];
-            bonescontainer.classList.add(...bonescontainerclasses);
-            bonescontainer.innerHTML += `
-                <span class="text-white font-semibold">Bones : </span>`;
-            let brokenText = "";
-            let shatteredText = "";
-
-            // Proses broken
-            if (broken > 0) {
-              if (broken > 2) {
-                brokenText = `<span class="text-[#F44849] font-semibold">${broken} broken</span>`;
-              } else {
-                brokenText = `<span class="text-[#F3C678] font-semibold">${broken} broken</span>`;
-              }
-            }
-
-            // Proses shattered
-            if (shattered > 0) {
-              if (shattered > 2) {
-                shatteredText = `<span class="text-[#F44849] font-semibold">${shattered} shattered</span>`;
-              } else {
-                shatteredText = `<span class="text-[#F3C678] font-semibold">${shattered} shattered</span>`;
-              }
-            }
-
-            // Gabungkan hasilnya
-            if (brokenText || shatteredText) {
-              bonescontainer.innerHTML += `<span class="text-white font-semibold">${brokenText}${brokenText && shatteredText ? ', ' : ''}${shatteredText}</span></div>`;
-              surginfo.append(bonescontainer);
-            }
-
-          }
-          // Bleeding
-          if (bleeding > 0) {
-            if (bleeding == 1)
-              surginfo.innerHTML += `<div class="col-span-2">
-                <span class="text-white font-semibold">Patient is losing blood <span class="text-[#7EBDE1] font-semibold">slowly</span></span>
-              </div>`;
-            else if (bleeding == 4)
-              surginfo.innerHTML += `<div class="col-span-2">
-                <span class="text-white font-semibold">Patient is losing blood <span class="text-[#F44849] font-semibold">fast!</span></span>
-              </div>`;
-            else {
-              surginfo.innerHTML += `<div class="col-span-2">
-                <span class="text-white font-semibold">Patient is <span class="text-[#F3C678] font-semibold">losing blood!</span></span>
-              </div>`;
-            }
-          }
-          // Fever
-          if (fever > 0 && temp > 100) {
-            if (fever < 0.5)
-              surginfo.innerHTML += `<div class="col-span-2">
-                <span class="text-white font-semibold">Patient\'s fever is <span class="text-[#7EBDE1] font-semibold">slowly rising</span></span>
-              </div>`;
-            else if (fever > 2)
-              surginfo.innerHTML += `<div class="col-span-2">
-                <span class="text-white font-semibold">Patient\'s fever is <span class="text-[#F44849] font-semibold">climbing fast!</span></span>
-              </div>`;
-            else {
-              surginfo.innerHTML += `<div class="col-span-2">
-                <span class="text-white font-semibold">Patient\'s fever is <span class="text-[#F3C678] font-semibold">climbing!</span></span>
-              </div>`;
-            }
-          }
-          // Special: heart stop and cut awake
-          if (heart == 1)
-            surginfo.innerHTML += `<div class="col-span-2">
-                <span class="text-[#F44849] font-semibold">The patient\'s heart has stopped!</span>
-              </div>`;
-          else if (incisions > 0 && sleep == 0)
-            surginfo.innerHTML += `<div class="col-span-2">
-                <span class="text-[#F44849] font-semibold">The patient screams and flails!</span>
-              </div>`;
-
-          // container end
-          drawbox.appendChild(surginfo);
-          // Tool text
-          if (s)
-            drawbox.innerHTML += `<div class="col-span-2 mt-10">
-                <span class="text-[#7EBDE1] font-semibold">${tooltext}</span>
-              </div>`;
-          else
-            drawbox.innerHTML += `<div class="col-span-2 mt-10">
-                <span class="text-[#F44849] font-semibold">[Skill Fail (${Math.round(30 - document.getElementById("skill").value / 4)})%)] </span> 
-                <span class="text-[#F3C678] font-semibold">${tooltext}</span> 
-              </div>`;
-
-          // Availability
-          if (toolavailable('scalpel'))
-            document.getElementById('scalpel').src = './surgical_scalpel.png'
-          else
-            document.getElementById('scalpel').src = './empty_surgery.png';
-
-          if (toolavailable('stitches'))
-            document.getElementById('stitches').src = './surgical_stitches.png'
-          else
-            document.getElementById('stitches').src = './empty_surgery.png';
-
-          if (toolavailable('anesthetic'))
-            document.getElementById('anesthetic').src = './surgical_anesthetic.png'
-          else
-            document.getElementById('anesthetic').src = './empty_surgery.png';
-
-          if (toolavailable('antibiotics'))
-            document.getElementById('antibiotics').src = './surgical_antibiotics.png'
-          else
-            document.getElementById('antibiotics').src = './empty_surgery.png';
-          if (toolavailable('antiseptic'))
-            document.getElementById('antiseptic').src = './surgical_antiseptic.png'
-          else
-            document.getElementById('antiseptic').src = './empty_surgery.png';
-
-          if (toolavailable('clamp'))
-            document.getElementById('clamp').src = './surgical_clamp.png'
-          else
-            document.getElementById('clamp').src = './empty_surgery.png';
-
-          if (toolavailable('defibrillator'))
-            document.getElementById('defibrillator').src = './surgical_defibrilator.png'
-          else
-            document.getElementById('defibrillator').src = './empty_surgery.png';
-
-          if (toolavailable('labkit'))
-            document.getElementById('labkit').src = './surgical_labkit.png'
-          else
-            document.getElementById('labkit').src = './empty_surgery.png';
-
-          if (toolavailable('pins'))
-            document.getElementById('pins').src = './surgical_pins.png'
-          else
-            document.getElementById('pins').src = './empty_surgery.png';
-
-          if (toolavailable('splint'))
-            document.getElementById('splint').src = './surgical_splint.png'
-          else
-            document.getElementById('splint').src = './empty_surgery.png';
-          if (toolavailable('sponge'))
-            document.getElementById('sponge').src = './surgical_sponge.png'
-          else
-            document.getElementById('sponge').src = './empty_surgery.png';
-
-          if (toolavailable('transfusion'))
-            document.getElementById('transfusion').src = './surgical_transfusion.png'
-          else
-            document.getElementById('transfusion').src = './empty_surgery.png';
-
-          if (toolavailable('ultrasound'))
-            document.getElementById('ultrasound').src = './surgical_ultrasound.png'
-          else
-            document.getElementById('ultrasound').src = './empty_surgery.png';
-
-          if (toolavailable('fixit'))
-            document.getElementById('fixit').src = './surgical_gloves.png'
-          else
-            document.getElementById('fixit').src = './empty_surgery.png';
-
-
-        }
-        function setstats(i) {
-          sounded = false;
-          labworked = false;
-          fixed = false;
-          fixable = false;
-          flu = false;
-          pulse = 40;
-          site = 0;
-          sleep = 0;
-          dirt = 0;
-          broken = 0;
-          shattered = 0;
-          incisions = 0;
-          bleeding = 0;
-          incneeded = 0;
-          heart = 0;
-          temp = 98.6;
-          fever = 0;
-          pretext = '';
-          fixtext = '';
-          postext = '';
-          scantext = '';
-          tooltext = 'Patient is prepped for surgery.';
-          endtext = '';
-          s = true;
-          bans = 0;
-          selfbans = 0;
-
-          spongUsed = 0;
-          scalpUsed = 0;
-          stitcUsed = 0;
-          antibUsed = 0;
-          antisUsed = 0;
-          ultraUsed = 0;
-          labkiUsed = 0;
-          anestUsed = 0;
-          defibUsed = 0;
-          splinUsed = 0;
-          pinsUsed = 0;
-          clampUsed = 0;
-          transUsed = 0;
-
-          switch (i) {
-            case 0:
-              fixed = true;
-              bleeding = 1;
-              broken = 1;
-              pretext = 'Patient broke his arm.';
-              scantext = 'a broken arm! You found 1 broken bone.';
-              break;
-            case 1:
-              fixed = true;
-              bleeding = 1;
-              broken = 1;
-              shattered = 1;
-              pretext = 'Patient broke his leg.';
-              scantext = 'a broken leg! You found 1 broken bone and 1 shattered bone.';
-              break;
-            case 2:
-              fixed = true;
-              flu = true;
-              temp = 104.6;
-              fever = 2.5;
-              dirt = 6;
-              pretext = 'Patient is showing signs of the bird flu.';
-              scantext = 'bird flu!';
-              break;
-            case 3:
-              fixed = true;
-              flu = true;
-              temp = 101.6;
-              fever = 3.6;
-              dirt = 6;
-              pretext = 'Patient is showing signs of the turtle flu.';
-              scantext = 'turtle flu!';
-              break;
-            case 4:
-              fixed = true;
-              flu = true;
-              temp = 107.6;
-              fever = 2.4;
-              pretext = 'Patient is showing signs of the monkey flu.';
-              scantext = 'monkey flu!';
-              break;
-            case 5:
-              sounded = true;
-              incneeded = 1;
-              pretext = 'Patient wants a nose job.';
-              fixtext = 'You have cut into nasal area.';
-              postext = 'You rearranged their face!';
-              break;
-            case 6:
-              incneeded = 1;
-              scantext = 'a lung tumor!';
-              pretext = 'Patient has a tumor in their lung.';
-              fixtext = 'The lungs are now exposed.';
-              postext = 'You excised the tumor!';
-              break;
-            case 7:
-              incneeded = 2;
-              scantext = 'a heart attack!';
-              pretext = 'Patient had a heart attack.';
-              fixtext = 'The heart is now exposed for operating.';
-              postext = 'You grafted in some nice new arteries!';
-              break;
-            case 8:
-              incneeded = 5;
-              scantext = 'a brain tumor!';
-              pretext = 'Patient has a brain tumor, deep inside.';
-              fixtext = 'You\'ve finally found the tumor!';
-              postext = 'You excised the tumor!';
-              break;
-            case 9:
-              incneeded = 2;
-              temp = 104.6;
-              fever = 0.6;
-              pulse = 30;
-              scantext = 'a liver infection!';
-              pretext = 'Patient has a liver infection.';
-              fixtext = 'You\'ve accessed the liver.';
-              postext = 'You treated the source of the infection!';
-              break;
-            case 10:
-              incneeded = 2;
-              temp = 101.6;
-              fever = 1.2;
-              scantext = 'kidney failure!';
-              pretext = 'Patient suffers from kidney failure.';
-              fixtext = 'You now have access to the bad kidney.';
-              postext = 'You popped in a fresh new kidney!';
-              break;
-            case 11:
-              incneeded = 3;
-              temp = 104.6;
-              fever = 1.2;
-              pulse = 30;
-              scantext = 'appendicitis!';
-              pretext = 'Patient suffers from appendicitis.';
-              fixtext = 'You now have access to the appendix.';
-              postext = 'You yanked out the appendix!';
-              break;
-            case 12:
-              incneeded = 2;
-              temp = 101.6;
-              bleeding = 1;
-              dirt = 6;
-              scantext = 'swallowed World Lock!';
-              pretext = 'Patient has swallowed a world lock.';
-              fixtext = 'You\'ve opened the stomach.';
-              postext = 'You got the lock out!';
-              break;
-            case 13:
-              incneeded = 3;
-              temp = 100.4;
-              scantext = 'a herniated disc!';
-              pretext = 'Patient\'s spine is damaged.';
-              fixtext = 'You\'ve opened up the vertebrae.';
-              postext = 'You repaired the disc!';
-              break;
-            case 14:
-              incneeded = 2;
-              temp = 100.58;
-              dirt = 6;
-              bleeding = 1;
-              shattered = 4;
-              scantext = 'broken everything! You found 4 shattered bones.';
-              pretext = 'Patient was run over by a truck.';
-              fixtext = 'You\'ve found gravel in the knees.';
-              postext = 'You removed the gravel!';
-              break;
-            case 15:
-              incneeded = 1;
-              pulse = 20;
-              dirt = 6;
-              bleeding = 4;
-              scantext = 'a serious head injury!';
-              pretext = 'Patient has a serious head injury.';
-              fixtext = 'You\'ve opened the skull.';
-              postext = 'You reduced the swelling!';
-              break;
-            case 16:
-              incneeded = 2;
-              pulse = 30;
-              dirt = 10;
-              bleeding = 3;
-              broken = 2;
-              shattered = 1;
-              scantext = 'serious trauma! You found 2 broken bones and 1 shattered bone.';
-              pretext = 'Patient suffered serious trauma with a punctured lung.';
-              fixtext = 'You found the lung puncture.';
-              postext = 'You repaired it.';
-              break;
-            case 17:
-              incneeded = 3;
-              pulse = 30;
-              dirt = 10;
-              bleeding = 4;
-              broken = 2;
-              shattered = 2;
-              scantext = 'massive trauma! You found 2 broken bones and 2 shattered bones.';
-              pretext = 'Patient suffered massive trauma with internal bleeding.';
-              fixtext = 'You found the internal bleed.';
-              postext = 'You cauterized it.';
-              break;
-            case 18:
-              incneeded = 1;
-              dirt = 15;
-              scantext = 'torn punching muscle!';
-              pretext = 'Patient has a torn punching muscle.';
-              fixtext = 'You\'ve accessed the arm muscles. ';
-              postext = 'You patched the torn punching muscle! They should be back to punching in no time.';
-              break;
-            case 19:
-              fixable = false
-              incneeded = 2;
-              temp = 98.6;
-              dirt = 0;
-              fever = 0;
-              bleeding = 1;
-              scantext = 'gem cuts!';
-              pretext = 'Patient is bleeding from multiple gem-induced cuts.a';
-              fixtext = 'You\'ve examined the wounds.';
-              postext = 'You\'ve stitches the gem cuts closed and stopped the bleeding.';
-              break;
-            case 20:
-              fixable = false
-              incneeded = 1
-              temp = 104.6;
-              pulse = 20;
-              shattered = 1;
-              dirt = 5;
-              scantext = 'Grumbleteeth! You found 1 shattered bones.';
-              pretext = 'Patient\'s teeth are chattering They sound angry.';
-              fixtext = 'You removed grumbleteeth';
-              postext = 'You\'ve replaced the patient\'s angriest teeth and quited';
-              break;
-            case 21:
-              fixable = false;
-              temp = 98.6;
-              incneeded = 2;
-              heart = 0;
-              fever = 1.56;
-              dirt = 10;
-              shattered = 2;
-              scantext = 'chicken feet! You found 2 shattered bones.';
-              pretext = 'Patient feet have turned into chicken toes.';
-              fixtext = 'You\'ve insvestigated the feet.';
-              postext = 'You fixed the patient feet. They look like normal blocky toes again!';
-              break;
-            case 22:
-              fixable = false;
-              incneeded = 1;
-              shattered = 2;
-              temp = 107.6;
-              fever = 1.2;
-              dirt = 2;
-              scantext = 'Broken Heart! You found 2 shattered bones.';
-              pretext = 'Patient suffered from a Broken Heart.';
-              fixtext = 'You\'ve revealed the heart.';
-              postext = 'You\'ve repaired the fractured in the patient\'s heart';
-              break;
-            case 23:
-              incneeded = 2;
-              temp = 100.58;
-              shattered = 1;
-              fever = 0.8;
-              dirt = 10;
-              bleeding = 5;
-              scantext = 'brain worms! You found 1 Shattered bone.';
-              pretext = 'You\'ve exposed the brain.';
-              fixtext = 'You made a neat incision.';
-              postext = 'You\'ve shut down the worm party in the patient brain and cleared away their trash.';
-              break;
-            case 24:
-              incneeded = 0;
-              fixable = false;
-              temp = 98.6;
-              dirt = 0;
-              broken = 6;
-              shattered = 2;
-              bleeding = 1;
-              scantext = 'ecto bones! You found 6 Broken bones and 2 Shattered bones.';
-              pretext = 'You\'ve exposed the ribs';
-              fixtext = 'You made an incision';
-              postext = 'You pinned down all patient major bones and dyed them back to their normal color.';
-              break;
-            case 25:
-              fixable = false;
-              pulse = 20;
-              temp = 104.6;
-              fever = 1.98;
-              shattered = 1;
-              incneeded = 2;
-              scantext = 'Moldy Guts! You found 1 shattered bone.';
-              pretext = 'Patient suffers from Moldy Guts.';
-              fixtext = 'You\'ve openned the abdomen.';
-              postext = 'You\'e cleaned out the patient\'s internal organs and applied a light air freshener';
-              break;
-            case 26:
-              fixable = false;
-              incneeded = 3;
-              temp = 101.6;
-              fever = 2.0;
-              dirt = 10;
-              incneeded = 3;
-              bleeding = 3;
-              scantext = 'fatty liver!';
-              pretext = 'Patient suffered fatty liver.';
-              fixtext = 'Patient poor diet has led to a high degree of fat build-up in their liver';
-              postext = 'You pickup it.';
-              break;
-            case 27:
-              fixed = false;
-              incneeded = 3;
-              temp = 105.6;
-              broken = 2;
-              fever = 2.6;
-              dirt = 10;
-              bleeding = 3;
-              scantext = 'Chaos Infection! You found 2 Broken bones.';
-              pretext = 'Patient suffered chaos infection.';
-              fixtext = 'Patient poor diet has led to a high degree of fat build-up in their liver';
-              postext = 'You removed it.';
-              break;
-            case 28:
-              fixed = false;
-              incneeded = 4;
-              temp = 100.1;
-              broken = 2;
-              fever = 3.1;
-              sleep = 3;
-              shattered = 2;
-              dirt = 10;
-              incneeded = 3;
-              bleeding = 3;
-              scantext = 'Lupus! You found 2 Broken bones.';
-              pretext = 'Patient suffered lupus.';
-              fixtext = 'Chance of patient tearing skin, adding one extra incision';
-              postext = 'You removed it.';
-          }
-        }
-        function custom() {
-          var s = prompt('Select the case.\nType "help" to see all available cases.');
-          switch (s.toLowerCase()) {
-            case 'help':
-              alert('Here is a list of all possible cases:\n\nBroken Arm\nBroken Leg\nBird Flu\nTurtle Flu\nMonkey Flu\nNose Job\nLung Tumor\nHeart Attack\nBrain Tumor' +
-                '\nLiver Infection\nKidney Failure\nAppendicitis\nSwallowed World Lock\nHerniated Disc\nBroken Everything\nSerious Head Injury\nSerious Trauma\nMassive Trauma' +
-                '\nTorn Punching Muscle\nGem Cuts\nGrumbleteeth\nChicken Feet\nBroken Heart\nBrainworms\nEcto-Bones\nMoldy Guts\nFatty Live\nChaos Infection\nLupus');
-              break;
-            case 'broken arm':
-              setstats(0);
-              draw();
-              break;
-            case 'broken leg':
-              setstats(1);
-              draw();
-              break;
-            case 'bird flu':
-              setstats(2);
-              draw();
-              break;
-            case 'turtle flu':
-              setstats(3);
-              draw();
-              break;
-            case 'monkey flu':
-              setstats(4);
-              draw();
-              break;
-            case 'nose job':
-              setstats(5);
-              draw();
-              break;
-            case 'lung tumor':
-              setstats(6);
-              draw();
-              break;
-            case 'heart attack':
-              setstats(7);
-              draw();
-              break;
-            case 'brain tumor':
-              setstats(8);
-              draw();
-              break;
-            case 'liver infection':
-              setstats(9);
-              draw();
-              break;
-            case 'kidney failure':
-              setstats(10);
-              draw();
-              break;
-            case 'appendicitis':
-              setstats(11);
-              draw();
-              break;
-            case 'swallowed world lock':
-              setstats(12);
-              draw();
-              break;
-            case 'herniated disc':
-              setstats(13);
-              draw();
-              break;
-            case 'broken everything':
-              setstats(14);
-              draw();
-              break;
-            case 'serious head injury':
-              setstats(15);
-              draw();
-              break;
-            case 'serious trauma':
-              setstats(16);
-              draw();
-              break;
-            case 'massive trauma':
-              setstats(17);
-              draw();
-              break;
-            case 'torn punching muscle':
-              setstats(18);
-              draw();
-              break;
-            case 'gem cuts':
-              setstats(19);
-              draw();
-              break;
-            case 'grumbleteeth':
-              setstats(20);
-              draw();
-              break;
-            case 'chicken feet':
-              setstats(21);
-              draw();
-              break;
-            case 'broken heart':
-              setstats(22);
-              draw();
-              break;
-            case 'brainworms':
-              setstats(23);
-              draw();
-              break;
-            case 'ecto-bones':
-              setstats(24);
-              draw();
-              break;
-            case 'moldy guts':
-              setstats(25);
-              draw();
-              break;
-            case 'fatty liver':
-              setstats(26);
-              draw();
-              break;
-            case 'chaos infection':
-              setstats(27);
-              draw();
-              break;
-            case 'lupus':
-              setstats(28);
-              draw();
-              break;
-            default:
-              alert('No such case found. Try again.');
-          }
-
-        }
-        function usetool(tool) {
-          s = Math.random() * 100 > (30 - document.getElementById("skill").value / 4);
-          if (toolavailable(tool)) {
-            switch (tool) {
-              case 'sponge':
-                spongUsed += 1;
-                if (s) {
-                  dirt = 0;
-                  tooltext = 'You mopped up the operating site.';
-                } else
-                  tooltext = 'You somehow managed to eat the sponge.';
-                break;
-              case 'scalpel':
-                scalpUsed += 1;
-                if (sleep == 0)
-                  endtext = 'You have cut the awake patient!';
-                if (incisions == incneeded && shattered == 0) {
-                  tooltext = 'You stabbed the patient in a vital organ!';
-                  bleeding += 1;
-                  s = true;
-                } else {
-                  incisions += 1;
-                  if (s)
-                    tooltext = 'You\'ve made a neat incision.'
-                  else
-                    tooltext = 'This will leave a nasty scar, but you managed to cut the right place.';
-                }
-                break;
-              case 'stitches':
-                stitcUsed += 1;
-                if (s) {
-                  if (incisions > 0)
-                    tooltext = 'You stitched up an incision.'
-                  else if (bleeding > 0)
-                    tooltext = 'You bandaged some injuries.'
-                  else
-                    tooltext = 'You tried to stitch your patient\'s mouth shut!.';
-                  if (bleeding > 0)
-                    bleeding -= 1;
-                  if (incisions > 0)
-                    incisions -= 1;
-                } else
-                  tooltext = 'You somehow tied yourself up in stitches!';
-                break;
-              case 'antiseptic':
-                antisUsed += 1;
-                if (s) {
-                  site = Math.min(site + 20, 20);
-                  tooltext = 'You disinfected the operating site.';
-                } else
-                  tooltext = 'You spilled antiseptic on your shoes. They are very clean now.';
-                break;
-              case 'antibiotics':
-                antibUsed += 1;
-                if (s) {
-                  fever -= 3;
-                  tooltext = 'You used antibiotics to reduce the patient\'s infection.';
-                  if (fever > -3)
-                    antibs = true;
-                } else {
-                  fever += 1;
-                  tooltext = 'This is the wrong medication! The bacteria like it.';
-                }
-                break;
-              case 'splint':
-                splinUsed += 1;
-                if (s) {
-                  broken -= 1;
-                  tooltext = 'You splinted a broken bone.';
-                } else
-                  tooltext = 'You ate a splint, good job!';
-                break;
-              case 'anesthetic':
-                anestUsed += 1;
-                if (s) {
-                  sleep += 10;
-                  tooltext = 'The patient falls into a deep sleep.';
-                } else
-                  tooltext = 'You end up inhaling all the anesthetic yourself. You feel woozy.';
-                break;
-              case 'labkit':
-                labkiUsed += 1;
-                if (s) {
-                  labworked = true;
-                  if (flu)
-                    tooltext = 'You performed lab work on the patient, and discovered they are suffering from ' + scantext;
-                  else
-                    tooltext = 'You performed lab work on the patient, and have antibiotics at the ready.';
-                } else
-                  tooltext = 'You contaminated the sample.';
-                break;
-              case 'ultrasound':
-                ultraUsed += 1;
-                if (s) {
-                  sounded = true;
-                  if (flu)
-                    tooltext = 'You scanned the patient , but didn\'t find any abnormal masses.'
-                  else
-                    tooltext = 'You scanned the patient with ultrasound, discovering they are suffering from ' + scantext;
-                } else
-                  tooltext = 'You scanned the nurse with your ultrasound!';
-                break;
-              case 'pins':
-                pinsUsed += 1;
-                if (s) {
-                  shattered -= 1;
-                  broken += 1;
-                  tooltext = 'You pinned a shattered bone together. Don\'t forget to splint it!';
-                } else {
-                  bleeding += 1;
-                  tooltext = 'You jabbed the pin through the artery!';
-                }
-                break;
-              case 'defibrillator':
-                defibUsed += 1;
-                if (s) {
-                  heart = 0;
-                  tooltext = 'You shocked the patient back to life!';
-                } else
-                  tooltext = 'You electrocuted yourself!';
-                break;
-              case 'transfusion':
-                transUsed += 1;
-                if (s) {
-                  pulse = Math.min(pulse + 15, 40);
-                  tooltext = 'You transfused several pints of blood into your patient.';
-                } else
-                  tooltext = 'You spilled all of it! Kind of gross.';
-                break;
-              case 'clamp':
-                clampUsed += 1;
-                if (s) {
-                  bleeding -= 1;
-                  tooltext = 'You clamped up some blood vessels.';
-                } else
-                  tooltext = 'The clamp fell out of your hand, oh well.';
-                break;
-              case 'fixit':
-                if (s) {
-                  fixed = true;
-                  tooltext = postext;
-                } else
-                  tooltext = 'You screwed it up! Try again.';
-                break;
-            }
-            // Making Glove available
-            if (!fixable && (incisions == incneeded) && sounded) {
-              fixable = true;
-              tooltext += '<br />' + fixtext;
-            }
-            // Managing bleeding, site, dirt
-            dirt += bleeding + incisions;
-            if (dirt > 10)
-              dirt = 10;
-            site -= Math.floor(dirt / 3);
-            if (site < -25)
-              site = -25;
-            if (sleep == 0 && incisions > 0)
-              bleeding += 1;
-            if (bleeding > 4)
-              bleeding = 4;
-
-            // Managing temp, fever
-            if (fever < 0) {
-              if (fever > -0.06)
-                fever = 0
-              else if (!antibs)
-                fever = (fever - 3) / 2;
-            } else if ((site <= 2) && (bleeding > 0) || (site <= 4) && (incisions > 0))
-              fever += 0.06;
-            temp += fever;
-            temp = Math.round(temp * 100) / 100;
-            if (temp < 98.6)
-              temp = 98.6;
-            antibs = false;
-            // Managing status, heart stopping
-            if (((sleep > 0) && (Math.random() < 0.2)) || (heart > 0))
-              heart += 1
-            else
-              sleep = Math.max(sleep - 1, 0);
-            // Managing pulse
-            pulse -= bleeding + Math.min(incisions, 1);
-            // Checking for fail
-            if (pulse < 1 && endtext.length == 0)
-              endtext = 'Your patient bled out!'
-            else if (temp >= 111)
-              endtext = 'Your patient succumbed to infection!'
-            else if (heart == 3)
-              endtext = 'You failed to resucicate your patient in time!'
-            else if (sleep > 15)
-              endtext = 'You put your patient to sleep. Permanently!'
-            else if ((incisions == 0) && (broken == 0) && (shattered == 0) && fixed && (bleeding == 0) && (temp < 101))
-              endtext = 'success';
-            if (endtext != '') {
-              var usedtext = '';
-              if (true) {
-                usedtext += '\n';
-                if (spongUsed > 0)
-                  usedtext += '\nSponges: ' + spongUsed;
-                if (scalpUsed > 0)
-                  usedtext += '\nScalpels: ' + scalpUsed;
-                if (stitcUsed > 0)
-                  usedtext += '\nStitches: ' + stitcUsed;
-                if (antibUsed > 0)
-                  usedtext += '\nAntibiotics: ' + antibUsed;
-                if (antisUsed > 0)
-                  usedtext += '\nAntiseptics: ' + antisUsed;
-                if (ultraUsed > 0)
-                  usedtext += '\nUltrasounds: ' + ultraUsed;
-                if (labkiUsed > 0)
-                  usedtext += '\nLab Kits: ' + labkiUsed;
-                if (anestUsed > 0)
-                  usedtext += '\nAnesthetics: ' + anestUsed;
-                if (defibUsed > 0)
-                  usedtext += '\nDefibrillators: ' + defibUsed;
-                if (splinUsed > 0)
-                  usedtext += '\nSplints: ' + splinUsed;
-                if (pinsUsed > 0)
-                  usedtext += '\nPins: ' + pinsUsed;
-                if (clampUsed > 0)
-                  usedtext += '\nClamps: ' + clampUsed;
-                if (transUsed > 0)
-                  usedtext += '\nTransfusions: ' + transUsed;
-              }
-              if (endtext == 'success')
-                alert('You saved your patient! You get: ' + prizetext() + '!' + usedtext)
-              else
-                alert(endtext + usedtext);
-              setstats(Math.round(Math.random() * 18));
-            }
-            draw();
-          }
-        }
-
-      </script>
-
-      <!-- container -->
-      <div class="absolute z-10 w-full top-12">
-        <div class="flex flex-col gap-5">
-          <div class="flex w-full justify-center px-4">
-            <div class="growtopia-theme-box w-full max-w-[1400px] p-5 flex flex-col items-center">
-              <h1 class="text-4xl font-extrabold text-center text-white drop-shadow-2xl">Growtopia Surgery Guide &
-                Simulator</h1>
-              <span class="text-slate-100 text-center font-semibold text-md">Try unlimited surgeries without spending
-                any surgical
-                tools!</span>
+          <li class="flex flex-row gap-1 w-full items-center">
+            <div class="w-fit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-paperclip">
+                <path d="M13.234 20.252 21 12.3" />
+                <path
+                  d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
+              </svg></div>
+            <div class="">
+              <span class="text-lime-300">Surgical Antiseptic:</span> Antiseptic digunakan sebelum Surgical Scalpel.
+              Tujuannya untuk membersihkan tubuh pasien dan mengurangi kemungkinan skill fail.
             </div>
-          </div>
+          </li>
 
-
-          <section class="flex w-full justify-center px-4 ">
-            <div class="growtopia-theme-box w-full max-w-[1400px] p-5 flex flex-col relative">
-              <div
-                class="growtopia-theme-box w-fit p-0.5 overflow-hidden absolute z-[101] -right-[17px] -top-[17px] bg-[#447180] hidden">
-                <img src="./wrench.png" alt="wrenc-menu"
-                  class="w-[25px] h-[25px] animate-[wiggle_3s_ease-in-out_infinite]">
-              </div>
-              <span class="text-[#fad785] text-lg font-bold">
-                <div class="flex flex-row justify-between">
-                  <div class="flex flex-row justify-start items-end gap-2 mb-2">
-                    <img src="./surg-e.png" alt="surg-e" class="w-10 h-10">
-                    <span class="text-2xl font-semibold text-[#F3C678]">Surg-E Anatomical Dummy</span>
-                  </div>
-                  <button id="opensetting"
-                    class="growtopia-button flex flex-row gap-1 px-2 h-11 justify-center items-center text-white font-semibold text-lg">
-                    <span class="text-white text-2xl">Setting</span>
-                    <img class="w-8 h-8 animate-[wiggle_3s_ease-in-out_infinite]" src="./wrench.png" alt="">
-                  </button>
-                </div>
-                <div id="date-ver" class="text-xl font-semibold text-white"></div>
-                <div id="surstat">
-                  The patient has not been diagnosed.
-                  <br>
-                  <div class="grid grid-cols-2 w-fit gap-x-2 gap-y-1">
-                    <div class="flex flex-row gap-0.5 w-auto">
-                      <span class="text-white font-semibold">Pulse : </span>
-                      <span class="text-white font-semibold">number</span>
-                    </div>
-                    <div class="flex flex-row gap-0.5">
-                      <span class="text-white font-semibold">Status : </span>
-                      <span class="text-white font-semibold">number</span>
-                    </div>
-                    <div class="flex flex-row gap-0.5 w-auto">
-                      <span class="text-white font-semibold">Temp : </span>
-                      <span class="text-white font-semibold">number</span>
-                    </div>
-                    <div class="flex flex-row gap-0.5">
-                      <span class="text-white font-semibold">Operation Site : </span>
-                      <span class="text-white font-semibold">number</span>
-                    </div>
-                    <div class="col-span-2">
-                      <span class="text-white font-semibold">Pulse : </span>
-                      <span class="text-white font-semibold">number</span>
-                    </div>
-                    <div class="flex flex-row gap-0.5">
-                      <span class="text-white font-semibold">Pulse : </span>
-                      <span class="text-white font-semibold">number</span>
-                    </div>
-                    <div class="flex flex-row gap-0.5">
-                      <span class="text-white font-semibold">Pulse : </span>
-                      <span class="text-white font-semibold">number</span>
-                    </div>
-                  </div>
-                  <br> <br> <br>
-
-                  <span class="w-20">Status: Awake</span>
-                  Pulse: <span class="text-[#46f013]">Strong</span>
-                  Status: <span class="text-[#f44849]">Awake</span><br>
-                  Temp: <span class="text-[#8cbde1]">100.4</span>
-                  Operation site: <span class="text-[#8cbde1]">Not sanitized</span><br>
-                  Incisions: <span class="text-[#46f013]">0</span><br><br>
-                  <span class="text-[#f44849]">[Skill Fail (30%)]</span>
-                  <span class="text-[#f3c670]">You spilled all of it! Kind of gross.</span>
-                </div>
-              </span>
-
-              <div class="flex flex-wrap gap-2 mt-4">
-                <img class="w-16 h-14 cursor-pointer" id="sponge" onclick="usetool('sponge');"
-                  title="Surgical Sponge." />
-                <img class="w-16 h-14 cursor-pointer" id="scalpel" onclick="usetool('scalpel');"
-                  title="Surgical Scalpel." />
-                <img class="w-16 h-14 cursor-pointer" id="stitches" onclick="usetool('stitches');"
-                  title="Surgical Stitches." />
-                <img class="w-16 h-14 cursor-pointer" id="antibiotics" onclick="usetool('antibiotics');"
-                  title="Surgical Antibiotics." />
-                <img class="w-16 h-14 cursor-pointer" id="antiseptic" onclick="usetool('antiseptic');"
-                  title="Surgical Antiseptic." />
-                <img class="w-16 h-14 cursor-pointer" id="fixit" onclick="usetool('fixit');" title="Surgical Glove." />
-                <img class="w-16 h-14 cursor-pointer" id="ultrasound" onclick="usetool('ultrasound');"
-                  title="Surgical Ultrasound." />
-              </div>
-
-              <div class="flex flex-wrap gap-2 mt-4">
-                <img class="w-16 h-14 cursor-pointer" id="labkit" onclick="usetool('labkit');"
-                  title="Surgical Lab Kit." />
-                <img class="w-16 h-14 cursor-pointer" id="anesthetic" onclick="usetool('anesthetic');"
-                  title="Surgical Anesthetic." />
-                <img class="w-16 h-14 cursor-pointer" id="defibrillator" onclick="usetool('defibrillator');"
-                  title="Surgical Defibrillator." />
-                <img class="w-16 h-14 cursor-pointer" id="splint" onclick="usetool('splint');"
-                  title="Surgical Splint." />
-                <img class="w-16 h-14 cursor-pointer" id="pins" onclick="usetool('pins');" title="Surgical Pins." />
-                <img class="w-16 h-14 cursor-pointer" id="clamp" onclick="usetool('clamp');" title="Surgical Clamp." />
-                <img class="w-16 h-14 cursor-pointer" id="transfusion" onclick="usetool('transfusion');"
-                  title="Surgical Transfusion." />
-              </div>
+          <li class="flex flex-row gap-1 w-full items-center">
+            <div class="w-fit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-paperclip">
+                <path d="M13.234 20.252 21 12.3" />
+                <path
+                  d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
+              </svg></div>
+            <div class="">
+              <span class="text-lime-300">Surgical Clamp:</span> Clamp digunakan untuk menurunkan pendarahan pasien
+              tanpa menutup sayatan terbuka sama seperti Surgical Stitches.
             </div>
-            <script>
-              // date-ver
-              const datever = document.querySelector('#date-ver');
-              const date = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-              // open surgery setting
-              const openbutton = document.querySelector('#opensetting');
-              const settingtab = document.querySelector('#surgsetting');
-              const closebutton = document.querySelector('#closesetting');
-              openbutton.addEventListener('click', function () {
-                settingtab.classList.remove('hidden');
-                settingtab.classList.add('flex');
-                setTimeout(() => {
-                  settingtab.querySelector('.notif').classList.add('show');
-                }, 50);
-              })
-              closebutton.addEventListener('click', function () {
-                settingtab.querySelector('.notif').classList.remove('show');
-                setTimeout(() => {
-                  settingtab.classList.remove('flex');
-                  settingtab.classList.add('hidden');
-                }, 501);
-              })
+          </li>
 
-
-              datever.innerHTML = `${date}: <span class='text-[#FFA500]'>Version 1.00</span>`;
-              setstats(Math.floor(Math.random() * 18));
-              draw();
-              
-            </script>
-          </section>
-          <!-- end surg simulator -->
-          <h2 class="text-4xl font-bold text-center text-white w-full bg-[#E31C30]/70 py-4 px-4">Surgery Tools</h2>
-          <section class="py-5 flex flex-col justify-center items-center w-full gap-10 px-4">
-            <div class="w-full max-w-[1400px] flex flex-col gap-10 justify-center items-center relative">
-              <div class="grid md:grid-cols-2 gap-[30px]">
-                <div class="p-8 flex flex-row gap-6 growtopia-theme-box justify-center items-center">
-                  <img class="min-w-16" src="./surgical_sponge.png" alt="Polyethylene terephthalate">
-                  <div class="flex flex-col gap-1 w-full">
-                    <h2 class="font-semibold text-lg text-slate-50">Surgical Sponge</h2>
-                    <p class="text-sm text-slate-200">Used to clean up the operation site and make it easier to see. It
-                      is the
-                      only usable tool when the message "You can't see what you are doing!" is shown.</p>
-                  </div>
-                </div>
-                <div class="p-8 flex flex-row gap-6 growtopia-theme-box justify-center items-center">
-                  <img class="min-w-16" src="./surgical_splint.png" alt="Polyethylene terephthalate">
-                  <div class="flex flex-col gap-1 w-full">
-                    <h2 class="font-semibold text-lg text-slate-50">Surgical Splint</h2>
-                    <p class="text-sm text-slate-200">Used to fix fractures. If the patient has a broken bone, use this
-                      to fix
-                      it.</p>
-                  </div>
-                </div>
-                <div class="p-8 flex flex-row gap-6 growtopia-theme-box justify-center items-center">
-                  <img class="min-w-16" src="./surgical_antiseptic.png" alt="Polyethylene terephthalate">
-                  <div class="flex flex-col gap-1 w-full">
-                    <h2 class="font-semibold text-lg text-slate-50">Surgical Antiseptic</h2>
-                    <p class="text-sm text-slate-200">Used to clean the operation site. If the operation site is
-                      unsanitary,
-                      this can be used to make it clean. If the operation site has incisions or is bleeding and is
-                      unsanitary,
-                      a fever will start</p>
-                  </div>
-                </div>
-                <div class="p-8 flex flex-row gap-6 growtopia-theme-box justify-center items-center">
-                  <img class="min-w-16" src="./surgical_antibiotics.png" alt="Polyethylene terephthalate">
-                  <div class="flex flex-col gap-1 w-full">
-                    <h2 class="font-semibold text-lg text-slate-50">Surgical Antibiotics</h2>
-                    <p class="text-sm text-slate-200">Used when the patient has a fever. If the patient's fever is
-                      climbing,
-                      this can be used to lower the temperature. The patient's temperature cannot be lower than 98.6.
-                    </p>
-                  </div>
-                </div>
-                <div class="p-8 flex flex-row gap-6 growtopia-theme-box justify-center items-center">
-                  <img class="min-w-16" src="./surgical_anesthetic.png" alt="Polyethylene terephthalate">
-                  <div class="flex flex-col gap-1 w-full">
-                    <h2 class="font-semibold text-lg text-slate-50">Surgical Anesthetic</h2>
-                    <p class="text-sm text-slate-200">Used to put a patient to sleep, turning its Awake status to
-                      Unconscious.
-                      Surgical Scalpel must only be used when the patient is not awake.</p>
-                  </div>
-                </div>
-                <div class="p-8 flex flex-row gap-6 growtopia-theme-box justify-center items-center">
-                  <img class="min-w-16" src="./surgical_scalpel.png" alt="Polyethylene terephthalate">
-                  <div class="flex flex-col gap-1 w-full">
-                    <h2 class="font-semibold text-lg text-slate-50">Surgical Scalpel</h2>
-                    <p class="text-sm text-slate-200">Used to cut open the patient. The "Fix it" button will usually
-                      appear
-                      once the patient is diagnosed and enough incisions are made. It is also used to access shattered
-                      bones
-                      so that Surgical Pins can be used.
-                      Every use of scalpel causes slightly more bleeding.</p>
-                  </div>
-                </div>
-                <div class="p-8 flex flex-row gap-6 growtopia-theme-box justify-center items-center">
-                  <img class="min-w-16" src="./surgical_stitches.png" alt="Polyethylene terephthalate">
-                  <div class="flex flex-col gap-1 w-full">
-                    <h2 class="font-semibold text-lg text-slate-50">Surgical Stitches</h2>
-                    <p class="text-sm text-slate-200">Used to decrease bleeding and close up incisions. This tool is
-                      usually
-                      used when the patient is losing blood before a Surgical Scalpel has been used or after the "Fix
-                      it"
-                      button when the player's incisions need to be stitched up.</p>
-                  </div>
-                </div>
-                <div class="p-8 flex flex-row gap-6 growtopia-theme-box justify-center items-center">
-                  <img class="min-w-16" src="./surgical_labkit.png" alt="Polyethylene terephthalate">
-                  <div class="flex flex-col gap-1 w-full">
-                    <h2 class="font-semibold text-lg text-slate-50">Surgical Lab Kit</h2>
-                    <p class="text-sm text-slate-200">Used to unlock Surgical Antibiotics. Surgical Antibiotics cannot
-                      be used
-                      before using this tool.</p>
-                  </div>
-                </div>
-                <div class="p-8 flex flex-row gap-6 growtopia-theme-box justify-center items-center">
-                  <img class="min-w-16" src="./surgical_clamp.png" alt="Polyethylene terephthalate">
-                  <div class="flex flex-col gap-1 w-full">
-                    <h2 class="font-semibold text-lg text-slate-50">Surgical Clamp</h2>
-                    <p class="text-sm text-slate-200">Used to clamp up blood vessels. This tool can be used to decrease
-                      blood
-                      loss, but it can only be used if the patient has at least one incision. Less effective than
-                      Surgical
-                      Stitches.</p>
-                  </div>
-                </div>
-                <div class="p-8 flex flex-row gap-6 growtopia-theme-box justify-center items-center">
-                  <img class="min-w-16" src="./surgical_pins.png" alt="Polyethylene terephthalate">
-                  <div class="flex flex-col gap-1 w-full">
-                    <h2 class="font-semibold text-lg text-slate-50">Surgical Pins</h2>
-                    <p class="text-sm text-slate-200">Used to fix shattered bones. When used, a shattered bone turns
-                      into a
-                      broken bone. This item can only be used when the patient has at least one incision.</p>
-                  </div>
-                </div>
-                <div class="p-8 flex flex-row gap-6 growtopia-theme-box justify-center items-center">
-                  <img class="min-w-16" src="./surgical_transfusion.png" alt="Polyethylene terephthalate">
-                  <div class="flex flex-col gap-1 w-full">
-                    <h2 class="font-semibold text-lg text-slate-50">Surgical Transfusion</h2>
-                    <p class="text-sm text-slate-200">Used to transfuse several pints of blood into a patient. Increases
-                      the
-                      strength of the patient's pulse, which is an indication of how much blood the patient has.</p>
-                  </div>
-                </div>
-                <div class="p-8 flex flex-row gap-6 growtopia-theme-box justify-center items-center">
-                  <img class="min-w-16" src="./surgical_ultrasound.png" alt="Polyethylene terephthalate">
-                  <div class="flex flex-col gap-1 w-full">
-                    <h2 class="font-semibold text-lg text-slate-50">Surgical Ultrasound</h2>
-                    <p class="text-sm text-slate-200">Used to diagnose a patient. If the root cause is not a fever, the
-                      player
-                      must use this to discover the patient's condition. It will also reveal the number of broken and
-                      shattered bones.</p>
-                  </div>
-                </div>
-                <div class="p-8 flex flex-row gap-6 growtopia-theme-box justify-center items-center">
-                  <img class="min-w-16" src="./surgical_defibrilator.png" alt="Polyethylene terephthalate">
-                  <div class="flex flex-col gap-1 w-full">
-                    <h2 class="font-semibold text-lg text-slate-50">Surgical Defibrillator</h2>
-                    <p class="text-sm text-slate-200">Used to shock a patient back to life. If the patient's heart has
-                      stopped, this must be given to the patient within 2 moves or the patient will die and the surgery
-                      will
-                      fail.</p>
-                  </div>
-                </div>
-                <div class="p-8 flex flex-row gap-6 growtopia-theme-box justify-center items-center">
-                  <img class="min-w-16" src="./surgical_sponge.png" alt="Polyethylene terephthalate">
-                  <div class="flex flex-col gap-1 w-full">
-                    <h2 class="font-semibold text-lg text-slate-50">Surgical Sponge</h2>
-                    <p class="text-sm text-slate-200">Used to clean up the operation site and make it easier to see. It
-                      is the
-                      only usable tool when the message "You can't see what you are doing!" is shown.</p>
-                  </div>
-                </div>
-              </div>
+          <li class="flex flex-row gap-1 w-full items-center">
+            <div class="w-fit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-paperclip">
+                <path d="M13.234 20.252 21 12.3" />
+                <path
+                  d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
+              </svg></div>
+            <div class="">
+              <span class="text-lime-300">Surgical Defibrillator:</span> Digunakan ketika jantung pasien berhenti saat
+              di bawah pengaruh Surgical Anesthetic, alat ini mampu membuat jantungnya berdetak kembali.
             </div>
-          </section>
-          <!-- end surg tool -->
-          <section class="flex flex-col h-20 w-full items-center justify-center shadow shadow-gray-900 bg-[#1E1F22]/70">
-            <ul class="items-center flex flex-row gap-2.5 text-white shadow-2xs">
-              <li class="">Version 1.00</li>
-              <li class="">Copyright © GTSurg Simulator 2025. All rights reserved.</li>
-            </ul>
-            <ul class="items-center flex flex-row gap-2.5 text-white shadow-2xs">
-              <li class="">All spritesheets used in this simulator are copyright by ubisoft.</li>
-              <li class="">This planner is in no way affiliated with Ubisoft or Growtopia.</li>
-            </ul>
-          </section>
+          </li>
+          <li class="flex flex-row gap-1 w-full items-center">
+            <div class="w-fit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-paperclip">
+                <path d="M13.234 20.252 21 12.3" />
+                <path
+                  d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
+              </svg></div>
+            <div class="">
+              <span class="text-lime-300">Surgical Lab Kit:</span> Lab Kit digunakan untuk mendeteksi bakteri atau virus
+              dan membuka Surgical Antibiotics ketika membedah pasien.
+            </div>
+          </li>
+
+          <li class="flex flex-row gap-1 w-full items-center">
+            <div class="w-fit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-paperclip">
+                <path d="M13.234 20.252 21 12.3" />
+                <path
+                  d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
+              </svg></div>
+            <div class="">
+              <span class="text-lime-300">Surgical Love Mallet:</span> Love Mallet digunakan pada pasien yang mengalami
+              "Love is Struck" yang hanya terjadi ketika Valentine Week.
+            </div>
+          </li>
+
+          <li class="flex flex-row gap-1 w-full items-center">
+            <div class="w-fit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-paperclip">
+                <path d="M13.234 20.252 21 12.3" />
+                <path
+                  d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
+              </svg></div>
+            <div class="">
+              <span class="text-lime-300">Surgical Pins:</span> Pins digunakan untuk memperbaiki tulang yang hancur,
+              retak atau patah setelah menggunakan Surgical Scalpel.
+            </div>
+          </li>
+
+          <li class="flex flex-row gap-1 w-full items-center">
+            <div class="w-fit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-paperclip">
+                <path d="M13.234 20.252 21 12.3" />
+                <path
+                  d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
+              </svg></div>
+            <div class="">
+              <span class="text-lime-300">Surgical Scalpel:</span> Scalpel digunakan untuk membuka bagian tubuh yang
+              terluka setelah menggunakan Surgical Anesthetic. Biasanya akan muncul tulisan "Fix it" di layar untuk
+              menggunakannya.
+            </div>
+          </li>
+
+          <li class="flex flex-row gap-1 w-full items-center">
+            <div class="w-fit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-paperclip">
+                <path d="M13.234 20.252 21 12.3" />
+                <path
+                  d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
+              </svg></div>
+            <div class="">
+              <span class="text-lime-300">Surgical Ultrasound:</span> Ultrasound digunakan untuk mendiagnosis pasien
+              beserta penanganannya.
+            </div>
+          </li>
+          <li class="flex flex-row gap-1 w-full items-center">
+            <div class="w-fit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-paperclip">
+                <path d="M13.234 20.252 21 12.3" />
+                <path
+                  d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
+              </svg></div>
+            <div class="">
+              <span class="text-lime-300">Surgical Splint:</span> Splint digunakan untuk mengobati tulang yang patah.
+            </div>
+          </li>
+
+          <li class="flex flex-row gap-1 w-full items-center">
+            <div class="w-fit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-paperclip">
+                <path d="M13.234 20.252 21 12.3" />
+                <path
+                  d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
+              </svg></div>
+            <div class="">
+              <span class="text-lime-300">Surgical Sponge:</span> Sponge digunakan untuk membersihkan darah dan operasi
+              yang berantakan. Ditandai oleh tulisan "You can't see what you are doing!" atau "It's becoming hard to
+              see".
+            </div>
+          </li>
+
+          <li class="flex flex-row gap-1 w-full items-center">
+            <div class="w-fit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-paperclip">
+                <path d="M13.234 20.252 21 12.3" />
+                <path
+                  d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
+              </svg></div>
+            <div class="">
+              <span class="text-lime-300">Surgical Stitches:</span> Stitches digunakan untuk menutup sayatan bekas pisau
+              bedah atau untuk mengurangi pendarahan yang terjadi. Stitches adalah item paling mahal di Surgery Kit
+              karena lebih sering digunakan dibanding item lainnya.
+            </div>
+          </li>
+
+          <li class="flex flex-row gap-1 w-full items-center">
+            <div class="w-fit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-paperclip">
+                <path d="M13.234 20.252 21 12.3" />
+                <path
+                  d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
+              </svg></div>
+            <div class="">
+              <span class="text-lime-300">Surgical Transfusion:</span> Transfusion digunakan untuk meningkatkan denyut
+              nadi pasien ketika lemah agar denyut nadi pasien kembali normal.
+            </div>
+          </li>
 
 
-        </div>
+        </ul>
+        <span class="text-slate-100 font-semibold text-base max-[535px]:text-xs">Daftar dan fungsi tool surgery diluar proses pembedahan : </span>
 
-      </div>
-      <!-- end container -->
-
-
-    </section>
-
-
-
-
-
-
-
+      </section>
+    </div>
   </main>
-
-
 </body>
 
 </html>

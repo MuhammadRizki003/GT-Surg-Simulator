@@ -10,7 +10,7 @@
     font-family: "CenturyGothicBold", sans-serif;
     background-color: #000000;
 
-    background-image: url("./../../public/bedrock.png");
+    background-image: url("./../../public/bedrock.webp");
     /* background-position: center; */
     /* Center the image */
     /* background-repeat: no-repeat; */
@@ -21,7 +21,7 @@
 
 @layer components {
   .growtopia-theme-box {
-    background: rgba(68, 129, 166, 0.7);
+    background: rgba(68, 129, 166, 0.7) !important;
     border: 5px solid rgb(190, 232, 241);
     border-radius: 7px;
     /* overflow: hidden auto; */
@@ -55,6 +55,16 @@
     text-shadow: rgba(0, 0, 0, 0.7) 2px 2px;
     background: rgb(137, 195, 214);
   }
+
+  .growtopia-ok-button{
+    border-radius: 5px;
+    box-shadow: rgb(0, 0, 0) 2px 2px;
+    cursor: pointer;
+    text-decoration: none;
+    text-shadow: rgba(0, 0, 0, 0.7) 2px 2px;
+    background: #FDCC04
+  }
+
   .notif{
     width: 100%;
     overflow-x: hidden;
@@ -64,6 +74,9 @@
   }
   .notif.show{
     max-height: 100%;
+  }
+  .select2-selection__rendered{
+    display: none !important;
   }
 
 }
