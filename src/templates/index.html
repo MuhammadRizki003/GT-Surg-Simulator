@@ -12,14 +12,14 @@
 
 <body class="flex flex-col w-full h-screen items-center relative">
   <header
-    class="flex min-h-20 h-20 max-h-20 fixed top-0 bg-[#1E1F22] z-[999] flex-row justify-center w-full border-b border-[#2B2D31]/90 px-5">
+    class="flex min-h-20 h-20 max-h-20 fixed top-0 bg-[#1E1F22] z-[999] flex-row justify-center w-full transition-colors duration-300 ease-in-out px-5">
     <div class="flex flex-row w-full max-w-[1400px] justify-between">
       <a href="#/" class="items-center flex flex-row gap-2.5">
         <img src="./goldcadu.webp" alt="Gold Cadusesu Logo">
         <h1 class="text-xl capitalize font-semibold text-teal-600">GTSURG SIMULATOR</h1>
       </a>
       <nav class="flex flex-row">
-        <button id="hamburger" class=" h-full aspect-square hidden justify-end items-center max-[500px]:flex">
+        <button id="hamburger" class=" h-screew-full aspect-square hidden justify-end items-center max-[500px]:flex">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu w-8 h-8 text-white text-right">
             <line x1="4" x2="20" y1="12" y2="12" />
@@ -35,7 +35,7 @@
           </li>
           <li
             class=" text-stone-500 font-semibold max-[500px]:text-right max-[500px]:text-lg max-[500px]:px-5 max-[500px]:w-64 max-[500px]:h-15">
-            <a href="#/upcoming">Upcoming</a>
+            <a href="#/main">Main</a>
           </li>
         </ul>
       </nav>
@@ -43,223 +43,6 @@
 
   </header>
   <main id="mainContent" class="flex grow flex-col w-full h-fit items-center mt-20 relative">
-    <div class="bg-black/80 py-5 flex flex-col min-h-screen items-center w-full gap-5 px-4 max-[460px]:px-2">
-      <section class="growtopia-theme-box w-full max-w-[1400px] p-5 flex flex-col items-center">
-        <h1 class="text-4xl font-extrabold text-center text-white drop-shadow-2xl max-[535px]:text-2xl">Panduan Surgery
-          untuk pemula di Growtopia.</h1>
-        <span class="text-slate-100 text-center font-semibold text-md max-[535px]:text-xs">(Panduan dibuat berdasarkan
-          kemampuan penulis)</span>
-      </section>
-      <section class="growtopia-theme-box w-full max-w-[1400px] p-5 flex flex-col">
-        <h1 class="text-2xl font-extrabold text-white drop-shadow-2xl max-[535px]:text-xl">Fungsi Surgical
-          Tools</h1>
-        <span class="text-slate-100 font-semibold text-base max-[535px]:text-xs">Daftar dan fungsi tool surgery yang
-          krusial ketika bedah dimulai : </span>
-        <ul class="space-y-1 text-white/80 list-disc list-inside">
-          <li class="flex flex-row gap-1 w-full items-center">
-            <div class="w-fit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-paperclip">
-                <path d="M13.234 20.252 21 12.3" />
-                <path
-                  d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
-              </svg></div>
-            <div class="">
-              <span class="text-lime-300">Surgical Anesthetic:</span> Anesthetic digunakan untuk membuat pasien menjadi
-              tak sadarkan diri.
-              Status
-              pemain tersebut akan berubah dari Awake ke Unconscious. Hal ini penting sebelum kamu memutuskan untuk
-              memulai pembedahan.
-            </div>
-          </li>
-          <li class="flex flex-row gap-1 w-full items-center">
-            <div class="w-fit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-paperclip">
-                <path d="M13.234 20.252 21 12.3" />
-                <path
-                  d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
-              </svg></div>
-            <div class="">
-              <span class="text-lime-300">Surgical Antibiotics:</span> Antibiotics digunakan untuk menurunkan suhu panas
-              atau demam yang ditandai dengan munculnya tulisan "Patient's fever is climbing".
-            </div>
-          </li>
-
-          <li class="flex flex-row gap-1 w-full items-center">
-            <div class="w-fit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-paperclip">
-                <path d="M13.234 20.252 21 12.3" />
-                <path
-                  d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
-              </svg></div>
-            <div class="">
-              <span class="text-lime-300">Surgical Antiseptic:</span> Antiseptic digunakan sebelum Surgical Scalpel.
-              Tujuannya untuk membersihkan tubuh pasien dan mengurangi kemungkinan skill fail.
-            </div>
-          </li>
-
-          <li class="flex flex-row gap-1 w-full items-center">
-            <div class="w-fit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-paperclip">
-                <path d="M13.234 20.252 21 12.3" />
-                <path
-                  d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
-              </svg></div>
-            <div class="">
-              <span class="text-lime-300">Surgical Clamp:</span> Clamp digunakan untuk menurunkan pendarahan pasien
-              tanpa menutup sayatan terbuka sama seperti Surgical Stitches.
-            </div>
-          </li>
-
-          <li class="flex flex-row gap-1 w-full items-center">
-            <div class="w-fit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-paperclip">
-                <path d="M13.234 20.252 21 12.3" />
-                <path
-                  d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
-              </svg></div>
-            <div class="">
-              <span class="text-lime-300">Surgical Defibrillator:</span> Digunakan ketika jantung pasien berhenti saat
-              di bawah pengaruh Surgical Anesthetic, alat ini mampu membuat jantungnya berdetak kembali.
-            </div>
-          </li>
-          <li class="flex flex-row gap-1 w-full items-center">
-            <div class="w-fit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-paperclip">
-                <path d="M13.234 20.252 21 12.3" />
-                <path
-                  d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
-              </svg></div>
-            <div class="">
-              <span class="text-lime-300">Surgical Lab Kit:</span> Lab Kit digunakan untuk mendeteksi bakteri atau virus
-              dan membuka Surgical Antibiotics ketika membedah pasien.
-            </div>
-          </li>
-
-          <li class="flex flex-row gap-1 w-full items-center">
-            <div class="w-fit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-paperclip">
-                <path d="M13.234 20.252 21 12.3" />
-                <path
-                  d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
-              </svg></div>
-            <div class="">
-              <span class="text-lime-300">Surgical Love Mallet:</span> Love Mallet digunakan pada pasien yang mengalami
-              "Love is Struck" yang hanya terjadi ketika Valentine Week.
-            </div>
-          </li>
-
-          <li class="flex flex-row gap-1 w-full items-center">
-            <div class="w-fit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-paperclip">
-                <path d="M13.234 20.252 21 12.3" />
-                <path
-                  d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
-              </svg></div>
-            <div class="">
-              <span class="text-lime-300">Surgical Pins:</span> Pins digunakan untuk memperbaiki tulang yang hancur,
-              retak atau patah setelah menggunakan Surgical Scalpel.
-            </div>
-          </li>
-
-          <li class="flex flex-row gap-1 w-full items-center">
-            <div class="w-fit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-paperclip">
-                <path d="M13.234 20.252 21 12.3" />
-                <path
-                  d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
-              </svg></div>
-            <div class="">
-              <span class="text-lime-300">Surgical Scalpel:</span> Scalpel digunakan untuk membuka bagian tubuh yang
-              terluka setelah menggunakan Surgical Anesthetic. Biasanya akan muncul tulisan "Fix it" di layar untuk
-              menggunakannya.
-            </div>
-          </li>
-
-          <li class="flex flex-row gap-1 w-full items-center">
-            <div class="w-fit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-paperclip">
-                <path d="M13.234 20.252 21 12.3" />
-                <path
-                  d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
-              </svg></div>
-            <div class="">
-              <span class="text-lime-300">Surgical Ultrasound:</span> Ultrasound digunakan untuk mendiagnosis pasien
-              beserta penanganannya.
-            </div>
-          </li>
-          <li class="flex flex-row gap-1 w-full items-center">
-            <div class="w-fit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-paperclip">
-                <path d="M13.234 20.252 21 12.3" />
-                <path
-                  d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
-              </svg></div>
-            <div class="">
-              <span class="text-lime-300">Surgical Splint:</span> Splint digunakan untuk mengobati tulang yang patah.
-            </div>
-          </li>
-
-          <li class="flex flex-row gap-1 w-full items-center">
-            <div class="w-fit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-paperclip">
-                <path d="M13.234 20.252 21 12.3" />
-                <path
-                  d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
-              </svg></div>
-            <div class="">
-              <span class="text-lime-300">Surgical Sponge:</span> Sponge digunakan untuk membersihkan darah dan operasi
-              yang berantakan. Ditandai oleh tulisan "You can't see what you are doing!" atau "It's becoming hard to
-              see".
-            </div>
-          </li>
-
-          <li class="flex flex-row gap-1 w-full items-center">
-            <div class="w-fit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-paperclip">
-                <path d="M13.234 20.252 21 12.3" />
-                <path
-                  d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
-              </svg></div>
-            <div class="">
-              <span class="text-lime-300">Surgical Stitches:</span> Stitches digunakan untuk menutup sayatan bekas pisau
-              bedah atau untuk mengurangi pendarahan yang terjadi. Stitches adalah item paling mahal di Surgery Kit
-              karena lebih sering digunakan dibanding item lainnya.
-            </div>
-          </li>
-
-          <li class="flex flex-row gap-1 w-full items-center">
-            <div class="w-fit"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="lucide lucide-paperclip">
-                <path d="M13.234 20.252 21 12.3" />
-                <path
-                  d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
-              </svg></div>
-            <div class="">
-              <span class="text-lime-300">Surgical Transfusion:</span> Transfusion digunakan untuk meningkatkan denyut
-              nadi pasien ketika lemah agar denyut nadi pasien kembali normal.
-            </div>
-          </li>
-
-
-        </ul>
-        <span class="text-slate-100 font-semibold text-base max-[535px]:text-xs">Daftar dan fungsi tool surgery diluar proses pembedahan : </span>
-
-      </section>
-    </div>
   </main>
 </body>
 

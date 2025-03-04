@@ -6,3 +6,4 @@ import './components/surg-tool-container';
 import './components/surg-tool-item';
 import './components/tab-header';
 import './components/loading';
+import './components/malady-list'
