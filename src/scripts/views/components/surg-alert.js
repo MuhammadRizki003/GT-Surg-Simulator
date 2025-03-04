@@ -54,13 +54,13 @@ class SurgAlert extends HTMLElement {
             <div class="flex flex-row mt-40 justify-between pt-6 w-fit notif">
                 <div class="flex flex-col justify-center items-center w-full growtopia-theme-box p-4 gap-3">
                 <div class="flex flex-row gap-1 justify-start items-end w-full">
-                    <img src="./cadu.png" alt="">
+                    <img src="./cadu.webp" alt="">
                     <span class="flex items-center text-2xl text-slate-300">
                     Surgery Result
                     </span>
                 </div>
                 <div class="flex flex-col items-start w-full pl-2">
-                    <span id="restitle" class="flex items-center text-base text-slate-300">
+                    <span id="restitle" class="text-base text-slate-300">
                         ${this.data.title}
                     </span>
                     <span  class="flex items-center text-base text-slate-300">

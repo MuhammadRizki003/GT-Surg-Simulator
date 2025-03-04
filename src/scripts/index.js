@@ -11,10 +11,12 @@ const app = new App({
 });
 window.addEventListener('hashchange', () => {
   app.renderPage();
+  $("html, body").animate({ scrollTop: 0 }, "slow");
 });
  
 window.addEventListener('load', () => {
   app.renderPage();
+  $("html, body").animate({ scrollTop: 0 }, "slow");
 });
 window.addEventListener('scroll', () => {
   const header = $('header');

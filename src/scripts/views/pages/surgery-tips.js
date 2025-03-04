@@ -2,7 +2,7 @@ const surgtips = {
   async render() {
     return `
         <section class="w-full flex justify-center bg-[#1E1F22]">
-      <div class="w-full max-w-[1400px] h-40 flex flex-col gap-6 items-center justify-end text-center px-2">
+      <div class="w-full max-w-[1400px] flex flex-col gap-6 items-center justify-end text-center px-2">
         <h1 class="text-4xl font-bold text-white">Panduan Surgery untuk pemula di Growtopia</h1>
         <p class="text-xl text-white ">(Panduan dibuat berdasarkan pengalaman penulis)</p>
       </div>
@@ -16,10 +16,10 @@ const surgtips = {
           sebelum melakukan pembedahan adalah mengetahui masalah utama pada pasien. Yaitu dengan melakukan diagnosa
           dasar seperti berikut.</span>
         <ul class="space-y-1 text-white/80 list-disc list-inside">
-          <li class="flex flex-row gap-1 w-full items-center">
+          <li class="flex flex-row max-[750px]:flex-col gap-1 w-full items-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-paperclip">
+              class="max-[750px]:hidden">
               <path d="M13.234 20.252 21 12.3" />
               <path
                 d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
@@ -28,12 +28,12 @@ const surgtips = {
               Jika suhu pasien meningkat, <span class="text-yellow-300">Surgical Lab Kit</span> harus digunakan untuk membuka
               <span class="text-yellow-300">Surgical Antibiotics</span> yang kemudian dapat diberikan kepada pasien.
             </div>
-          </li>
+          <div class="w-full bg-amber-50 h-0.5 hidden max-[750px]:block"></div></li>
 
-          <li class="flex flex-row gap-1 w-full items-center">
+          <li class="flex flex-row max-[750px]:flex-col gap-1 w-full items-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-paperclip">
+              class="max-[750px]:hidden">
               <path d="M13.234 20.252 21 12.3" />
               <path
                 d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
@@ -42,12 +42,12 @@ const surgtips = {
               Jika denyut nadi pasien lemah, <span class="text-yellow-300">Surgical Transfusion</span> dapat diberikan kepada
               pasien.
             </div>
-          </li>
+          <div class="w-full bg-amber-50 h-0.5 hidden max-[750px]:block"></div></li>
 
-          <li class="flex flex-row gap-1 w-full items-center">
+          <li class="flex flex-row max-[750px]:flex-col gap-1 w-full items-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-paperclip">
+              class="max-[750px]:hidden">
               <path d="M13.234 20.252 21 12.3" />
               <path
                 d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
@@ -56,12 +56,12 @@ const surgtips = {
               Jika jantung pasien berhenti, <span class="text-yellow-300">Surgical Defibrillator</span> harus diberikan kepada
               pasien.
             </div>
-          </li>
+          <div class="w-full bg-amber-50 h-0.5 hidden max-[750px]:block"></div></li>
 
-          <li class="flex flex-row gap-1 w-full items-center">
+          <li class="flex flex-row max-[750px]:flex-col gap-1 w-full items-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-paperclip">
+              class="max-[750px]:hidden">
               <path d="M13.234 20.252 21 12.3" />
               <path
                 d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
@@ -70,12 +70,12 @@ const surgtips = {
               Jika pasien memiliki tulang yang patah, <span class="text-yellow-300">Surgical Splint</span> dapat diberikan
               kepada pasien untuk memperbaikinya.
             </div>
-          </li>
+          <div class="w-full bg-amber-50 h-0.5 hidden max-[750px]:block"></div></li>
 
-          <li class="flex flex-row gap-1 w-full items-center">
+          <li class="flex flex-row max-[750px]:flex-col gap-1 w-full items-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-paperclip">
+              class="max-[750px]:hidden">
               <path d="M13.234 20.252 21 12.3" />
               <path
                 d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
@@ -85,12 +85,12 @@ const surgtips = {
                 class="text-yellow-300">Surgical Clamp</span> dapat digunakan. Jika kehilangan darah tanpa ada sayatan, hanya
               <span class="text-yellow-300">Surgical Stitches</span> yang dapat digunakan.
             </div>
-          </li>
+          <div class="w-full bg-amber-50 h-0.5 hidden max-[750px]:block"></div></li>
 
-          <li class="flex flex-row gap-1 w-full items-center">
+          <li class="flex flex-row max-[750px]:flex-col gap-1 w-full items-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-paperclip">
+              class="max-[750px]:hidden">
               <path d="M13.234 20.252 21 12.3" />
               <path
                 d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
@@ -99,12 +99,12 @@ const surgtips = {
               Jika pasien kehilangan darah dan area operasi tidak higienis, demam akan terjadi karena infeksi dan <span
                 class="text-yellow-300">Surgical Antibiotics</span> harus digunakan.
             </div>
-          </li>
+          <div class="w-full bg-amber-50 h-0.5 hidden max-[750px]:block"></div></li>
 
-          <li class="flex flex-row gap-1 w-full items-center">
+          <li class="flex flex-row max-[750px]:flex-col gap-1 w-full items-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-paperclip">
+              class="max-[750px]:hidden">
               <path d="M13.234 20.252 21 12.3" />
               <path
                 d="m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486" />
@@ -114,7 +114,7 @@ const surgtips = {
               kehilangan darah parah. Gunakan <span class="text-yellow-300">Surgical Anesthetic</span> lebih awal untuk
               mencegah ini.
             </div>
-          </li>
+          <div class="w-full bg-amber-50 h-0.5 hidden max-[750px]:block"></div></li>
 
         </ul>
       </div>
