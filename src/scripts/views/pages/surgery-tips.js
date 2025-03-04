@@ -15,7 +15,7 @@ const surgtips = {
         <span class="text-slate-100 font-semibold text-base max-[535px]:text-xs">Hal pertama yang harus kamu lakukan
           sebelum melakukan pembedahan adalah mengetahui masalah utama pada pasien. Yaitu dengan melakukan diagnosa
           dasar seperti berikut.</span>
-        <ul class="space-y-1 text-white/80 list-disc list-inside">
+        <ul class="space-y-1 text-white/80 list-disc list-inside max-[535px]:text-xs pt-2">
           <li class="flex flex-row max-[750px]:flex-col gap-1 w-full items-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"

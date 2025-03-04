@@ -1,146 +1,146 @@
 [
     {
-        "img": "./malady/broken_arm.png",
+        "img": "./malady/broken_arm.webp",
         "problem": "Broken Arm",
         "fix": "Gunakan <span class=\"text-teal-600\">Surgical Splint</span> untuk memperbaiki tulang yang patah. Gunakan <span class=\"text-teal-600\">Surgical Stitches</span> untuk menghentikan pendarahan."
     },
     {
-        "img": "./malady/broken_leg.png",
+        "img": "./malady/broken_leg.webp",
         "problem": "Broken Leg",
         "fix": "Gunakan <span class=\"text-teal-600\">Surgical Splint</span> untuk memperbaiki tulang yang patah. Tidurkan pasien menggunakan <span class=\"text-teal-600\">Surgical Anesthetic</span> dan potong pasien menggunakan <span class=\"text-teal-600\">Surgical Scalpel</span>. Gunakan <span class=\"text-teal-600\">Surgical Pins</span> untuk memperbaiki tulang yang patah. Tutup sayatan yang dibuat menggunakan <span class=\"text-teal-600\">Surgical Stitches</span> dan gunakan <span class=\"text-teal-600\">Surgical Splint</span> untuk memperbaiki tulang yang patah."
     },
     {
-        "img": "./malady/bird_flu.png",
+        "img": "./malady/bird_flu.webp",
         "problem": "Bird Flu",
         "fix": "Gunakan <span class=\"text-teal-600\">Surgical Lab Kit</span> untuk membuka <span class=\"text-teal-600\">Surgical Antibiotics</span> dan gunakan sampai suhu pasien tidak lagi naik."
     },
     {
-        "img": "./malady/turtle_flu.png",
+        "img": "./malady/turtle_flu.webp",
         "problem": "Turtle Flu",
         "fix": "Gunakan <span class=\"text-teal-600\">Surgical Lab Kit</span> untuk membuka <span class=\"text-teal-600\">Surgical Antibiotics</span> dan gunakan sampai suhu pasien tidak lagi naik."
     },
     {
-        "img": "./malady/monkey_flu.png",
+        "img": "./malady/monkey_flu.webp",
         "problem": "Monkey Flu",
         "fix": "Gunakan <span class=\"text-teal-600\">Surgical Lab Kit</span> untuk membuka <span class=\"text-teal-600\">Surgical Antibiotics</span> dan gunakan sampai suhu pasien tidak lagi naik."
     },
     {
-        "img": "./malady/nose_job.png",
+        "img": "./malady/nose_job.webp",
         "problem": "Nose Job",
         "fix": "Tidurkan pasien menggunakan <span class=\"text-teal-600\">Surgical Anesthetic</span> dan potong pasien menggunakan <span class=\"text-teal-600\">Surgical Scalpel</span> sampai tombol Perbaiki muncul (biasanya sekali). Pilih tombol Perbaiki dan gunakan <span class=\"text-teal-600\">Surgical Stitches</span> untuk menutup sayatan."
     },
     {
-        "img": "./malady/lung_tumor.png",
+        "img": "./malady/lung_tumor.webp",
         "problem": "Lung Tumor",
         "fix": "Tidurkan pasien menggunakan <span class=\"text-teal-600\">Surgical Anesthetic</span> dan potong pasien menggunakan <span class=\"text-teal-600\">Surgical Scalpel</span> sampai tombol Perbaiki muncul (biasanya sekali). Pilih tombol Perbaiki dan gunakan <span class=\"text-teal-600\">Surgical Stitches</span> untuk menutup sayatan."
     },
     {
-        "img": "./malady/heart_attack.png",
+        "img": "./malady/heart_attack.webp",
         "problem": "Heart Attack",
         "fix": "Gunakan <span class=\"text-teal-600\">Surgical Antibiotics</span> (opsional) sampai suhu mencapai 98.6. Tidurkan pasien menggunakan <span class=\"text-teal-600\">Surgical Anesthetic</span> dan potong pasien menggunakan <span class=\"text-teal-600\">Surgical Scalpel</span> sampai tombol Perbaiki muncul (biasanya dua kali). Pilih tombol Perbaiki dan gunakan <span class=\"text-teal-600\">Surgical Stitches</span> untuk menutup sayatan."
     },
     {
-        "img": "./malady/brain_tumor.png",
+        "img": "./malady/brain_tumor.webp",
         "problem": "Brain Tumor",
         "fix": "Tidurkan pasien menggunakan <span class=\"text-teal-600\">Surgical Anesthetic</span> dan potong pasien menggunakan <span class=\"text-teal-600\">Surgical Scalpel</span> sampai tombol Perbaiki muncul (biasanya lima kali). Pilih tombol Perbaiki dan gunakan <span class=\"text-teal-600\">Surgical Stitches</span> untuk menutup sayatan."
     },
     {
-        "img": "./malady/liver_infection.png",
+        "img": "./malady/liver_infection.webp",
         "problem": "Liver Infection",
         "fix": "Gunakan <span class=\"text-teal-600\">Surgical Antibiotics</span> sampai suhu mencapai 98.6. Tidurkan pasien menggunakan <span class=\"text-teal-600\">Surgical Anesthetic</span> dan potong pasien menggunakan <span class=\"text-teal-600\">Surgical Scalpel</span> sampai tombol Perbaiki muncul (biasanya dua kali). Pilih tombol Perbaiki dan gunakan <span class=\"text-teal-600\">Surgical Stitches</span> untuk menutup sayatan."
     },
     {
-        "img": "./malady/kidney_failure.png",
+        "img": "./malady/kidney_failure.webp",
         "problem": "Kidney Failure",
         "fix": "Gunakan <span class=\"text-teal-600\">Surgical Antibiotics</span> sampai suhu mencapai 98.6. Tidurkan pasien menggunakan <span class=\"text-teal-600\">Surgical Anesthetic</span> dan potong pasien menggunakan <span class=\"text-teal-600\">Surgical Scalpel</span> sampai tombol Perbaiki muncul (biasanya dua kali). Pilih tombol Perbaiki dan gunakan <span class=\"text-teal-600\">Surgical Stitches</span> untuk menutup sayatan."
     },
     {
-        "img": "./malady/appendicitis.png",
+        "img": "./malady/appendicitis.webp",
         "problem": "Appendicitis",
         "fix": "Gunakan <span class=\"text-teal-600\">Surgical Antibiotics</span> sampai suhu mencapai 98.6. Gunakan <span class=\"text-teal-600\">Surgical Antiseptic</span> sampai lokasi bersih. Tidurkan pasien menggunakan <span class=\"text-teal-600\">Surgical Anesthetic</span> dan potong pasien menggunakan <span class=\"text-teal-600\">Surgical Scalpel</span> sampai tombol Perbaiki muncul (biasanya tiga kali). Pilih tombol Perbaiki dan gunakan <span class=\"text-teal-600\">Surgical Stitches</span> untuk menutup sayatan. Jika suhu pasien naik di atas 100, gunakan <span class=\"text-teal-600\">Surgical Antibiotics</span>."
     },
     {
-        "img": "./malady/swallowed_a_world_lock.png",
+        "img": "./malady/swallowed_a_world_lock.webp",
         "problem": "Swallowed a World Lock",
         "fix": "Gunakan <span class=\"text-teal-600\">Surgical Antibiotics</span> sampai suhu mencapai 98.6. Tidurkan pasien menggunakan <span class=\"text-teal-600\">Surgical Anesthetic</span> dan potong pasien menggunakan <span class=\"text-teal-600\">Surgical Scalpel</span> sampai tombol Perbaiki muncul (biasanya dua kali). Pilih tombol Perbaiki dan gunakan <span class=\"text-teal-600\">Surgical Stitches</span> untuk menutup sayatan."
     },
     {
-        "img": "./malady/herniated_disc.png",
+        "img": "./malady/herniated_disc.webp",
         "problem": "Herniated Disc/Damaged spine",
         "fix": "Gunakan <span class=\"text-teal-600\">Surgical Antibiotics</span> sampai suhu mencapai 98.6. Tidurkan pasien menggunakan <span class=\"text-teal-600\">Surgical Anesthetic</span> dan potong pasien menggunakan <span class=\"text-teal-600\">Surgical Scalpel</span> sampai tombol Perbaiki muncul (biasanya tiga kali). Pilih tombol Perbaiki dan gunakan <span class=\"text-teal-600\">Surgical Stitches</span> untuk menutup sayatan."
     },
     {
-        "img": "./malady/broken_everything.png",
+        "img": "./malady/broken_everything.webp",
         "problem": "Broken Everything/Run over by a truck",
         "fix": "Gunakan <span class=\"text-teal-600\">Surgical Antibiotics</span> sampai suhu mencapai 98.6. Tidurkan pasien menggunakan <span class=\"text-teal-600\">Surgical Anesthetic</span> dan potong pasien menggunakan <span class=\"text-teal-600\">Surgical Scalpel</span> sampai tombol Perbaiki muncul. Pilih tombol Perbaiki dan gunakan <span class=\"text-teal-600\">Surgical Pins</span> untuk memperbaiki tulang yang patah, diikuti dengan <span class=\"text-teal-600\">Surgical Splints</span>. Jika pasien terbangun, gunakan <span class=\"text-teal-600\">Surgical Anesthetic</span> lagi. Tutup sayatan menggunakan <span class=\"text-teal-600\">Surgical Stitches</span> dan gunakan <span class=\"text-teal-600\">Surgical Splints</span> untuk memperbaiki tulang yang patah."
     },
     {
-        "img": "./malady/serious_head_injury.png",
+        "img": "./malady/serious_head_injury.webp",
         "problem": "Serious Head Injury",
         "fix": "Gunakan <span class=\"text-teal-600\">Surgical Stitches</span> sampai pasien tidak lagi berdarah. Tidurkan pasien menggunakan <span class=\"text-teal-600\">Surgical Anesthetic</span> dan potong pasien menggunakan <span class=\"text-teal-600\">Surgical Scalpel</span> sampai tombol Perbaiki muncul (biasanya sekali). Pilih tombol Perbaiki dan gunakan <span class=\"text-teal-600\">Surgical Stitches</span> untuk menutup sayatan."
     },
     {
-        "img": "./malady/serious_trauma.png",
+        "img": "./malady/serious_trauma.webp",
         "problem": "Serious Trauma with a punctured lung",
         "fix": "Gunakan <span class=\"text-teal-600\">Surgical Stitches</span> sampai pasien tidak lagi berdarah. Gunakan <span class=\"text-teal-600\">Surgical Splint</span> sampai tidak ada lagi tulang yang patah. Gunakan <span class=\"text-teal-600\">Surgical Antiseptic</span> sekali. Tidurkan pasien menggunakan <span class=\"text-teal-600\">Surgical Anesthetic</span> dan potong pasien menggunakan <span class=\"text-teal-600\">Surgical Scalpel</span> sampai tombol Perbaiki muncul (biasanya dua kali). Gunakan <span class=\"text-teal-600\">Surgical Stitches</span> untuk menutup sayatan sampai hanya tersisa satu (untuk mengurangi pendarahan). Gunakan <span class=\"text-teal-600\">Surgical Pins</span> untuk memperbaiki tulang yang patah dan tutup sayatan yang tersisa menggunakan <span class=\"text-teal-600\">Surgical Stitches</span>."
     },
     {
-        "img": "./malady/massive_trauma.png",
+        "img": "./malady/massive_trauma.webp",
         "problem": "Massive Trauma",
         "fix": "Gunakan <span class=\"text-teal-600\">Surgical Stitches</span> untuk menghentikan kehilangan darah. Gunakan <span class=\"text-teal-600\">Surgical Transfusion</span> sampai denyut nadi stabil/bagus. Gunakan <span class=\"text-teal-600\">Surgical Ultrasound</span> untuk mendiagnosis pasien. Tidurkan pasien menggunakan <span class=\"text-teal-600\">Surgical Anesthetic</span> dan potong pasien menggunakan <span class=\"text-teal-600\">Surgical Scalpel</span> sampai tombol Perbaiki muncul (biasanya tiga kali). Gunakan satu <span class=\"text-teal-600\">Surgical Stitches</span> untuk menghentikan pendarahan. Gunakan <span class=\"text-teal-600\">Surgical Pins</span> untuk memperbaiki tulang yang patah dan tutup sayatan yang tersisa menggunakan <span class=\"text-teal-600\">Surgical Stitches</span>. Gunakan <span class=\"text-teal-600\">Surgical Splint</span> sampai pasien tidak lagi memiliki tulang yang patah."
     },
     {
-        "img": "./malady/torn_punching_muscle.png",
+        "img": "./malady/torn_punching_muscle.webp",
         "problem": "Torn Punching Muscle (malady)",
         "fix": "Gunakan <span class=\"text-teal-600\">Surgical Anesthetic</span> untuk menidurkan pasien. Gunakan <span class=\"text-teal-600\">Surgical Scalpel</span> untuk memotong pasien sampai tombol Perbaiki muncul (biasanya sekali). Gunakan <span class=\"text-teal-600\">Surgical Stitches</span> untuk menutup sayatan."
     },
     {
-        "img": "./malady/gem_cuts.png",
+        "img": "./malady/gem_cuts.webp",
         "problem": "Gem Cuts (malady)",
         "fix": "Gunakan <span class=\"text-teal-600\">Surgical Anesthetic</span> untuk menidurkan pasien. Gunakan <span class=\"text-teal-600\">Surgical Scalpel</span> (dua kali) sampai pesan: <i>\"Anda telah memeriksa luka-luka tersebut\"</i> muncul. Pilih tombol Perbaiki dan gunakan <span class=\"text-teal-600\">Surgical Stitches</span> sampai tidak ada lagi sayatan."
     },
     {
-        "img": "./malady/broken_heart.png",
+        "img": "./malady/broken_heart.webp",
         "problem": "Broken Heart (malady)",
         "fix": "Gunakan <span class=\"text-teal-600\">Surgical Lab Kit</span> untuk membuka <span class=\"text-teal-600\">Surgical Antibiotics</span> dan gunakan sampai suhu mencapai 98.6. Tidurkan pasien menggunakan <span class=\"text-teal-600\">Surgical Anesthetic</span>. Gunakan <span class=\"text-teal-600\">Surgical Scalpel</span> sampai tombol Perbaiki muncul. Gunakan <span class=\"text-teal-600\">Surgical Pins</span> dua kali pada tulang yang patah. Gunakan <span class=\"text-teal-600\">Surgical Stitches</span> sampai tidak ada lagi sayatan. Malady ini memiliki penghentian jantung yang sangat sering, oleh karena itu disebut \"Broken Heart.\" Sangat disarankan untuk menggunakan item/pakaian yang mengurangi kemungkinan kegagalan keterampilan, seperti Teh. Gunakan <span class=\"text-teal-600\">Surgical Splint</span> sampai tidak ada lagi tulang yang patah."
     },
     {
-        "img": "./malady/grumbleteeth.png",
+        "img": "./malady/grumbleteeth.webp",
         "problem": "Grumbleteeth (malady)",
         "fix": "Gunakan <span class=\"text-teal-600\">Surgical Antibiotics</span> sampai suhu mencapai 98.6. Gunakan <span class=\"text-teal-600\">Surgical Ultrasound</span> untuk mendiagnosis pasien. Tidurkan pasien menggunakan <span class=\"text-teal-600\">Surgical Anesthetic</span> dan potong pasien menggunakan <span class=\"text-teal-600\">Surgical Scalpel</span> sampai tombol Perbaiki muncul (biasanya sekali). Gunakan <span class=\"text-teal-600\">Surgical Pins</span> untuk memperbaiki tulang yang patah dan <span class=\"text-teal-600\">Surgical Splint</span> untuk memperbaiki tulang yang patah. Gunakan <span class=\"text-teal-600\">Surgical Stitches</span> untuk menutup sayatan dan pilih tombol Perbaiki."
     },
     {
-        "img": "./malady/chicken_feet.png",
+        "img": "./malady/chicken_feet.webp",
         "problem": "Chicken Feet (malady)",
         "fix": "Gunakan <span class=\"text-teal-600\">Surgical Lab Kit</span> untuk membuka <span class=\"text-teal-600\">Surgical Antibiotics</span> dan kemudian turunkan suhu pasien menjadi 98.6. Tidurkan pasien menggunakan <span class=\"text-teal-600\">Surgical Anesthetic</span>. Gunakan <span class=\"text-teal-600\">Surgical Scalpel</span> sampai tombol Perbaiki muncul. Gunakan <span class=\"text-teal-600\">Surgical Pins</span> dua kali pada tulang yang patah. Gunakan <span class=\"text-teal-600\">Surgical Stitches</span> untuk menutup sayatan dan pilih tombol Perbaiki. Gunakan <span class=\"text-teal-600\">Surgical Splint</span> sampai pasien tidak lagi memiliki tulang yang patah."
     },
     {
-        "img": "./malady/chaos_infection.png",
+        "img": "./malady/chaos_infection.webp",
         "problem": "Chaos Infection (malady)",
         "fix": "Gunakan <span class=\"text-teal-600\">Surgical Sponge</span>, kemudian gunakan <span class=\"text-teal-600\">Surgical Lab Kit</span> untuk membuka <span class=\"text-teal-600\">Surgical Antibiotics</span> untuk menurunkan suhu menjadi 98.6. Perbaiki tulang yang patah dengan <span class=\"text-teal-600\">Surgical Splint</span>. Tidurkan pasien dengan <span class=\"text-teal-600\">Surgical Anesthetic</span>. Gunakan <span class=\"text-teal-600\">Surgical Scalpel</span> sampai tombol Perbaiki muncul (biasanya tiga kali). Gunakan <span class=\"text-teal-600\">Surgical Stitches</span> untuk menutup sayatan. Perlu dicatat bahwa malady ini dapat menyebabkan kenaikan dan penurunan suhu secara acak, penghentian jantung, dan fluktuasi status pasien (seperti pasien tertidur tanpa anestesi). Disarankan untuk tetap waspada saat melakukan malady ini."
     },
     {
-        "img": "./malady/lupus.png",
+        "img": "./malady/lupus.webp",
         "problem": "Lupus (malady)",
         "fix": "Gunakan <span class=\"text-teal-600\">Surgical Lab Kit</span> untuk membuka <span class=\"text-teal-600\">Surgical Antibiotics</span> dan kemudian turunkan suhu pasien menjadi 98.6. Kemudian, gunakan <span class=\"text-teal-600\">Surgical Stitches</span> untuk menghentikan pendarahan pasien. Tidurkan pasien dengan <span class=\"text-teal-600\">Surgical Anesthetic</span> dan gunakan <span class=\"text-teal-600\">Surgical Scalpel</span> lima kali meskipun tombol Perbaiki muncul. Gunakan <span class=\"text-teal-600\">Surgical Clamp</span> untuk memperbaiki pendarahan. Jika kulit serigala pasien robek, itu akan menambah sayatan. Gunakan <span class=\"text-teal-600\">Surgical Stitches</span> untuk menutup sayatan."
     },
     {
-        "img": "./malady/brainworms.png",
+        "img": "./malady/brainworms.webp",
         "problem": "Brainworms (malady)",
         "fix": "Gunakan <span class=\"text-teal-600\">Surgical Lab Kit</span> untuk membuka <span class=\"text-teal-600\">Surgical Antibiotics</span> dan kemudian turunkan suhu pasien menjadi 98.6. Kemudian, gunakan <span class=\"text-teal-600\">Surgical Stitches</span> untuk menghentikan pendarahan pasien. Tidurkan pasien dengan <span class=\"text-teal-600\">Surgical Anesthetic</span> dan gunakan <span class=\"text-teal-600\">Surgical Scalpel</span> sekali. Gunakan <span class=\"text-teal-600\">Surgical Clamp</span> untuk memperbaiki pendarahan. Gunakan <span class=\"text-teal-600\">Surgical Pins</span> untuk memperbaiki tulang yang patah dan <span class=\"text-teal-600\">Surgical Splint</span> untuk memperbaiki tulang yang patah. Gunakan <span class=\"text-teal-600\">Surgical Transfusion</span> sampai denyut nadi stabil/bagus. Gunakan <span class=\"text-teal-600\">Surgical Scalpel</span> sampai tombol Perbaiki muncul (biasanya satu kali). Gunakan <span class=\"text-teal-600\">Surgical Antibiotics</span>, <span class=\"text-teal-600\">Surgical Sponge</span>, dan <span class=\"text-teal-600\">Surgical Anesthetic</span> untuk menghindari harus menggunakannya saat mengeluarkan cacing, Perbaiki, jika otak melarikan diri ke belakang otak, ulangi. Gunakan <span class=\"text-teal-600\">Surgical Stitches</span> untuk menutup sayatan."
     },
     {
-        "img": "./malady/moldy_guts.png",
+        "img": "./malady/moldy_guts.webp",
         "problem": "Moldy Guts (malady)",
         "fix": "Gunakan <span class=\"text-teal-600\">Surgical Lab Kit</span> untuk membuka <span class=\"text-teal-600\">Surgical Antibiotics</span> dan kemudian turunkan suhu pasien menjadi 98.6. Tidurkan pasien menggunakan <span class=\"text-teal-600\">Surgical Anesthetic</span>. Gunakan <span class=\"text-teal-600\">Surgical Scalpel</span> sampai tombol Perbaiki muncul (biasanya dua kali). Gunakan <span class=\"text-teal-600\">Surgical Pins</span> sekali pada tulang yang patah. Perbaiki, Gunakan <span class=\"text-teal-600\">Surgical Stitches</span> untuk menutup sayatan dan pilih tombol Perbaiki. Gunakan <span class=\"text-teal-600\">Surgical Splint</span> sampai pasien tidak lagi memiliki tulang yang patah. Anda dipaksa untuk menggunakan <span class=\"text-teal-600\">Surgical Sponge</span> setiap beberapa giliran, \"<i>Usus pasien meledak sehingga tidak mungkin untuk melihat apapun!</i>\"."
     },
     {
-        "img": "./malady/ecto_bones.png",
+        "img": "./malady/ecto_bones.webp",
         "problem": "Ecto-Bones (malady)",
         "fix": "Gunakan <span class=\"text-teal-600\">Surgical Anesthetic</span> untuk menidurkan pasien. Gunakan <span class=\"text-teal-600\">Surgical Splint</span> sampai pasien tidak lagi memiliki tulang yang patah (biasanya enam kali). Gunakan <span class=\"text-teal-600\">Surgical Scalpel</span> (sekali) sampai pesan: \"<i>Anda telah mengekspos tulang rusuk</i>\" muncul. Perbaiki, Gunakan <span class=\"text-teal-600\">Surgical Pins</span> dua kali pada tulang yang patah. Gunakan <span class=\"text-teal-600\">Surgical Splint</span> sampai pasien tidak lagi memiliki tulang yang patah. Gunakan <span class=\"text-teal-600\">Surgical Stitches</span> untuk menutup sayatan."
     },
     {
-        "img": "./malady/fatty_liver.png",
+        "img": "./malady/fatty_liver.webp",
         "problem": "Fatty-Liver (malady)",
         "fix": "Gunakan <span class=\"text-teal-600\">Surgical Lab Kit</span> untuk membuka <span class=\"text-teal-600\">Surgical Antibiotics</span> dan kemudian turunkan suhu pasien menjadi 98.6. Gunakan <span class=\"text-teal-600\">Surgical Sponge</span>, gunakan <span class=\"text-teal-600\">Surgical Antiseptic</span> dua kali. Tidurkan pasien menggunakan <span class=\"text-teal-600\">Surgical Anesthetic</span> (pasien akan mengalami serangan jantung yang sering mulai dari titik ini). Gunakan <span class=\"text-teal-600\">Surgical Scalpel</span> tiga kali. Gunakan <span class=\"text-teal-600\">Surgical Stitches</span> untuk menutup sayatan, Perbaiki. Gunakan <span class=\"text-teal-600\">Surgical Sponge</span> setiap kali menjadi sulit untuk melihat. Untuk menghindari tidak dapat memperbaiki penghentian jantung yang umum. \"<i>Penumpukan lemak telah menyebabkan jantung pasien berhenti!</i>\"."
     }

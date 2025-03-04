@@ -38,7 +38,7 @@ class MaladyList extends HTMLElement {
         this._emptyContent();
         $(this).addClass('w-full');
         this.innerHTML += `
-        <ul class="space-y-1 text-white/80 list-disc list-inside flex gap-4 flex-col">
+        <ul class="space-y-1 text-white/80 list-disc list-inside flex gap-4 flex-col max-[535px]:text-xs">
             ${this._renderMalady()}
         </ul>
         `;
