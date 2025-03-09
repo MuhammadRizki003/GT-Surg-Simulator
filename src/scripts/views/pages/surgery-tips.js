@@ -3,12 +3,12 @@ const surgtips = {
     return `
         <section class="w-full flex justify-center bg-[#1E1F22]">
       <div class="w-full max-w-[1400px] flex flex-col gap-6 items-center justify-end text-center px-2">
-        <h1 class="text-4xl font-bold text-white">Panduan Surgery untuk pemula di Growtopia</h1>
-        <p class="text-xl text-white ">(Panduan dibuat berdasarkan pengalaman penulis)</p>
+        <h1 class="text-4xl font-bold text-white max-[535px]:text-2xl">Panduan Surgery untuk pemula di Growtopia</h1>
+        <p class="text-xl text-white max-[535px]:text-xs">(Panduan dibuat berdasarkan pengalaman penulis)</p>
       </div>
     </section>
     <section
-      class="w-full flex justify-center h-auto bg-[url(../../public/wavy-top.svg)] bg-contain bg-top bg-no-repeat bg-[#2B2D31]/60">
+      class="w-full flex justify-center h-auto bg-[url(../../public/wavy-top.svg)] bg-top bg-no-repeat bg-[#2B2D31]/60">
       <div class="w-full max-w-[1400px] flex flex-col gap-2 mt-32 px-6">
         <h2 class="text-2xl font-extrabold text-white drop-shadow-xl max-[535px]:text-lg">Ketahui Kondisi Pasien Sebelum
           Operasi</h2>

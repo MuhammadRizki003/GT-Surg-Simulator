@@ -7,7 +7,6 @@ class SurgSetting extends HTMLElement {
         super();
         this.render();
         this._malady = [
-            "Random",
             "Broken Arm",
             "Broken Leg",
             "Bird Flu",
@@ -60,7 +59,7 @@ class SurgSetting extends HTMLElement {
     _initSelect2() {
         
         $("select#case").select2({
-            data: this._malady,
+            data: this._malady.sort((a, b) => a.localeCompare(b)),
             placeholder: "Select an option",
             allowClear: true
         });
@@ -100,7 +99,9 @@ class SurgSetting extends HTMLElement {
                                     </div>
                                     <select id="case"
                                         class="block w-full p-2 ps-10 text-sm growtopia-theme-box focus:outline-0 placeholder:text-slate-300 text-white"
-                                        placeholder="Search" required ></select>
+                                        placeholder="Search" required >
+                                        <option value="Random">Random</option>
+                                    </select>
                                 </div>
                             </form>
                             <p class="flex items-center mt-2 text-xs text-slate-300">

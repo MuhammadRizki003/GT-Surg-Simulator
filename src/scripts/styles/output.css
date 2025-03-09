@@ -983,6 +983,9 @@
   .bg-contain {
     background-size: contain;
   }
+  .bg-cover {
+    background-size: cover;
+  }
   .bg-bottom {
     background-position: bottom;
   }
